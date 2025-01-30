@@ -46,3 +46,13 @@
     /* position: absolute;
     top: 230%;*/
 } 
+@media screen and (max-width:1280px){
+    .post{
+        height: 650px;
+        width: 100.5%;
+    } 
+    .blur{
+        height: 650px;
+        width: 100.5%;
+    }
+}
