@@ -103,7 +103,7 @@ export default function Categories() {
         </div>
       </div>
       
-      <div id="container">
+      <div id="containere">
         {categories.map((category, index) => (
           <div className="cats" key={index}>
             <div id="titre">
