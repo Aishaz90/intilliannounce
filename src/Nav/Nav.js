@@ -27,13 +27,7 @@ export default function Nav() {
               <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/categories">Categories</Link>
             </li>
             <li className="nav-item">
-            <Link 
-    className="nav-link" 
-    style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} 
-    to="/listing"
->
-    Listing Ads
-</Link>
+            <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/listing">Listing Ads</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/contact">Contact</Link>
