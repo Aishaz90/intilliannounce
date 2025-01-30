@@ -6,8 +6,21 @@ import Listing from './pages/Listing/Listing';
 import Nav from './Nav/Nav'
 import Footer from './Nav/Footer';
 import Multimedia from './pages/Multimedia/Multimedia';
+import { useEffect } from 'react';
 export default  function App() {
-  const location = useLocation(); 
+  const location = useLocation();
+  useEffect(() => {
+    console.log("Current Path:", location.pathname); // Debugging line
+  
+    if (location.pathname === "/listing") {
+      document.body.classList.add("listing-body");
+      document.body.classList.remove("home-body");
+    } 
+    else {
+      document.body.classList.add("home-body");
+      document.body.classList.remove("listing-body");
+    }
+  }, [location]);
   return (
     <div className="App">
       {location.pathname !== '/' && <Nav />}
