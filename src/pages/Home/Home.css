@@ -9,7 +9,7 @@
   color: #E31616;
 }
 #search{
-  margin-top: 24%;
+  margin-top: 17%;
 }
 #searchbar{
   background-color: #e31616aa;
@@ -67,7 +67,7 @@
 .card {
   position: relative;
   border-radius: 15px;
-  width: 90%;
+  width: 85%;
   overflow: hidden;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(41, 39, 39, 0.1);
@@ -240,17 +240,19 @@
   #imgs{
     background-size: cover;
     width: 100.5%;
-    height: 800px;
   }
   #float{
     width: 100.5%;
   }
   #search{
-    margin-top: 28%;
-    padding-left: 15%;
+    margin-top: 20%;
+    width: max-content;
+    margin-left: -5%;
   }
   .imgcat{
     width: 180px;
   }
-  
+  .card{
+    width: 100%;
+  }
 } 

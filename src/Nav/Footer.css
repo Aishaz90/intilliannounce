@@ -6,17 +6,18 @@
   }
   #imgfooter{
     width: 100%;
-    height: 800px;
+    height: 700px;
   }
   #floatf{
     position: absolute;
     width: 100%;
-    padding: 30px;
+    padding: 0px 50px;
+    height: 700px;
   }
   .subscribe-section {
     display: flex;
     justify-content: center;
-    padding-top: 8%;
+    padding-top: 5%;
   }
   
   #textSub {

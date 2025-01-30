@@ -5,6 +5,7 @@ import Cards from './Cards';  // Assuming you have a Cards component
 import Sidebar from './Sidebar';  // Assuming you have a Sidebar component
 import Nav from '../../Nav/Nav';
 import Footer from '../../Nav/Footer';
+import { Link } from 'react-router-dom';
 export default function Listing() {
     const [cards, setCards] = useState([]); // Initialize as an empty array
 
@@ -25,17 +26,15 @@ export default function Listing() {
     return (
         <div>
             <div className='post'>
-                <img src="./images/photoHome.png" alt="" className='img1'/>
+                <img src="pics/post1.png" alt="" className='img1'/>
                 <div className='blur'>
                     <Nav />
                     <div className="title">
                         <h1 id='h11'>ListingProduct</h1>
-                        <a href="/" className='aa'>Home</a> ---
-                        <a href="listing.html" className='aa'>ListingProduct</a>
+                        <Link to="/" className='aa'>Home ---</Link>
+                        <Link to='/listing' className='aa'>ListingProduct</Link>
                     </div>
                 </div>
-
-            
             </div>
                 <div>
                 <Sidebar/>

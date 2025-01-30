@@ -58,7 +58,7 @@ const HomePage = () => {
   ];
   return (
     <div id="Post">
-      <img src="pics/post2.png" width={1519} height={800} id='imgs' alt="" />
+      <img src="pics/post2.png" width={1519} height={700} id='imgs' alt="" />
       <div id='float'>
         <Nav />
         <div id="search">

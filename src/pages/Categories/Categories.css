@@ -1,0 +1,33 @@
+.souscat{
+    text-decoration: none;
+    color: #020053;
+    font-size: 40px;
+    font-family: Abhaya Libre SemiBold;
+    margin-left: 6px;
+}
+.souscat:hover{color: #020053;}
+.cats #titre{
+    display: flex;
+}
+.cats{
+    box-shadow: rgba(119, 119, 130, 0.699) 0px 7px 29px 0px;
+    width: 90%;
+    margin-left: 6%;
+    margin-top: 5%;
+    padding: 2%;
+    border-radius: 30px;
+    transition: all 0.5s ease-in;
+}
+.cats:hover{
+    transform: scale(1.03);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 40px 0px;
+    cursor: pointer;
+}
+.souscat{
+    color: #010053b3;
+    font-size: 25px;
+    font-family: Abhaya Libre SemiBold;
+}
+#links{
+    margin-left: 5%;
+}
