@@ -1,5 +1,6 @@
 .navbar {
     display: flex;
+    /* overflow: hidden; */
     justify-content: space-around;
     font-family: Abhaya Libre SemiBold;
     align-items: center;
@@ -10,14 +11,6 @@
     left: 0;
     z-index: 1000;
   }
-  
-  .navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-  }
-  
   .navbar ul {
     display: flex;
     list-style: none;
@@ -29,18 +22,7 @@
     margin: 0 30px;
   }
   
-  .navbar ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .navbar ul li a:hover {
-    color: #e31616;
-  }
-  
+ 
   .navbar .menu-toggle {
     display: none;
     font-size: 24px;
@@ -85,4 +67,9 @@
     border: none;
     font-size: larger;
   }
-  
+  @media screen and (max-width:1280px){
+    .navbar ul li {
+      text-align: center;
+      margin-left: 8px;
+    }
+  }

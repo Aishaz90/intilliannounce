@@ -57,121 +57,126 @@ const HomePage = () => {
     },
   ];
   return (
-    <div id="Post" style={{ background: `linear-gradient(rgba(32, 51, 102, 0.5), rgba(112, 117, 163, 0.1)), url(${postImage}) no-repeat` }}>
-      <Nav />
-      <div id="search">
-        <button
-          style={{
-            width: '200px',
-            padding: '10px',
-            borderRadius: '25px',
-            backgroundColor: '#E31616',
-            color: '#F8E8DA',
-            fontFamily: 'Abhaya Libre SemiBold',
-            border: 'none',
-            fontSize: 'x-large',
-            marginLeft: '-250px',
-          }}
-        >
-          Browse Ads
-        </button>
-        <button
-          style={{
-            width: '200px',
-            padding: '10px',
-            borderRadius: '25px',
-            backgroundColor: '#F8E8DA',
-            color: '#E31616',
-            fontFamily: 'Abhaya Libre SemiBold',
-            border: 'none',
-            marginLeft: '10px',
-            fontSize: 'x-large',
-          }}
-        >
-          Post an Ad
-        </button>
-      </div>
-      <div id="searchbar">
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <select
-            className="form-select"
-            style={{
-              color: '#E31616',
-              fontFamily: 'Abhaya Libre SemiBold',
-              fontSize: 'larger',
-              borderRadius: '15px',
-              width: '35%',
-              height: '50px',
-              background: "url('../../pics/MapPinLine.png') no-repeat 10px center",
-              backgroundColor: '#F8E8DA',
-              paddingLeft: '50px',
-            }}
-          >
-            <option value="">Select a City</option>
-            <option value="Tanger">Tanger</option>
-            <option value="Rabat">Rabat</option>
-            <option value="Fes">Fès</option>
-          </select>
-          <select
-            className="form-select"
-            style={{
-              color: '#E31616',
-              height: '50px',
-              fontFamily: 'Abhaya Libre SemiBold',
-              fontSize: 'larger',
-              borderRadius: '15px',
-              width: '35%',
-              marginLeft: '20px',
-              background: "url('../../pics/AlignLeft.png') no-repeat 10px center",
-              backgroundColor: '#F8E8DA',
-              paddingLeft: '50px',
-            }}
-          >
-            <option value="">Select a Category</option>
-            <option value="Multimedia">Multimedia</option>
-            <option value="Other">Other</option>
-          </select>
-          <input
-            type="text"
-            className="form-control"
-            style={{
-              width: '35%',
-              height: '50px',
-              borderRadius: '15px',
-              marginLeft: '20px',
-              color: '#E31616',
-              fontFamily: 'Abhaya Libre SemiBold',
-              fontSize: 'larger',
-              background: "url('../../pics/CurrencyKzt.png') no-repeat 10px center",
-              backgroundColor: '#F8E8DA',
-              paddingLeft: '50px',
-            }}
-            placeholder="Type Your Keyword"
-            id="p"
-          />
+    <div id="Post">
+      <img src="pics/post2.png" width={1519} height={800} id='imgs' alt="" />
+      <div id='float'>
+        <Nav />
+        <div id="search">
           <button
             style={{
-              width: '150px',
-              borderRadius: '15px',
+              width: '200px',
+              padding: '10px',
+              borderRadius: '25px',
               backgroundColor: '#E31616',
               color: '#F8E8DA',
-              marginLeft: '10px',
               fontFamily: 'Abhaya Libre SemiBold',
               border: 'none',
-              fontSize: 'larger',
+              fontSize: 'x-large',
+              marginLeft: '-400px',
+              marginBottom:'10px',
             }}
+            className='browsad'
           >
-            Search
+            Browse Ads
+          </button>
+          <button
+            style={{
+              width: '200px',
+              padding: '10px',
+              borderRadius: '25px',
+              backgroundColor: '#F8E8DA',
+              color: '#E31616',
+              fontFamily: 'Abhaya Libre SemiBold',
+              border: 'none',
+              marginLeft: '30px',
+              fontSize: 'x-large',
+            }}
+            className='postad'
+          >
+            Post an Ad
           </button>
         </div>
-        <div style={{ display: 'flex', marginTop: '20px' }}>
-          <h4 style={{ color: 'rgba(56, 50, 50, 0.758)' }}>Trending Keywords:</h4>
-          <h6 style={{ marginTop: '8px', marginLeft: '20px', wordSpacing: '30px', color: 'rgba(56, 50, 50, 0.758)' }}>
-            Camera Mobile Dress Table Pant ...
-          </h6>
+        <div id="searchbar">
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <select
+              className="form-select"
+              style={{
+                color: '#E31616',
+                fontFamily: 'Abhaya Libre SemiBold',
+                fontSize: 'larger',
+                borderRadius: '15px',
+                width: '35%',
+                height: '50px',
+                background: "url('../../pics/MapPinLine.png') no-repeat 10px center",
+                backgroundColor: '#F8E8DA',
+                paddingLeft: '50px',
+              }}
+            >
+              <option value="">Select a City</option>
+              <option value="Tanger">Tanger</option>
+              <option value="Rabat">Rabat</option>
+              <option value="Fes">Fès</option>
+            </select>
+            <select
+              className="form-select"
+              style={{
+                color: '#E31616',
+                height: '50px',
+                fontFamily: 'Abhaya Libre SemiBold',
+                fontSize: 'larger',
+                borderRadius: '15px',
+                width: '35%',
+                marginLeft: '20px',
+                background: "url('../../pics/AlignLeft.png') no-repeat 10px center",
+                backgroundColor: '#F8E8DA',
+                paddingLeft: '50px',
+              }}
+            >
+              <option value="">Select a Category</option>
+              <option value="Multimedia">Multimedia</option>
+              <option value="Other">Other</option>
+            </select>
+            <input
+              type="text"
+              className="form-control"
+              style={{
+                width: '35%',
+                height: '50px',
+                borderRadius: '15px',
+                marginLeft: '20px',
+                color: '#E31616',
+                fontFamily: 'Abhaya Libre SemiBold',
+                fontSize: 'larger',
+                background: "url('../../pics/CurrencyKzt.png') no-repeat 10px center",
+                backgroundColor: '#F8E8DA',
+                paddingLeft: '50px',
+              }}
+              placeholder="Type Your Keyword"
+              id="p"
+            />
+            <button
+              style={{
+                width: '150px',
+                borderRadius: '15px',
+                backgroundColor: '#E31616',
+                color: '#F8E8DA',
+                marginLeft: '10px',
+                fontFamily: 'Abhaya Libre SemiBold',
+                border: 'none',
+                fontSize: 'larger',
+              }}
+            >
+              Search
+            </button>
+          </div>
+          <div style={{ display: 'flex', marginTop: '20px' }}>
+            <h4 style={{ color: 'rgba(56, 50, 50, 0.758)' }}>Trending Keywords:</h4>
+            <h6 style={{ marginTop: '8px', marginLeft: '20px', wordSpacing: '30px', color: 'rgba(56, 50, 50, 0.758)' }}>
+              Camera Mobile Dress Table Pant ...
+            </h6>
+          </div>
         </div>
       </div>
-
       {/* Popular Categories */}
       <div id="cat">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -192,37 +197,41 @@ const HomePage = () => {
             View All Categories
           </button>
         </div>
-        <div className="scroll">
-          <div style={{aheight: '250px', minWidth: '250px' }}>
-            <img src="pics/multimedia.png" width={200} alt="" />
+        <div  className="scroll">
+          <div id='divcat1'
+          style={{
+            marginLeft: '1.5%',
+          }}>
+            <img src="pics/multimedia.png" className='imgcat' width={200} alt="" />
           </div>
           <div
+          id='divcat2'
             style={{
               marginLeft: '1.5%',
             }}
           >
-            <img src="pics/clothes.png" width={200} alt="" />
+            <img src="pics/clothes.png" className='imgcat' width={200} alt="" />
           </div>
           <div
             style={{
               marginLeft: '2%',
             }}
-          ><img src="pics/vehicles.png" width={200} alt="" /></div>
+          ><img src="pics/vehicles.png" className='imgcat' width={200} alt="" /></div>
           <div
             style={{
               marginLeft: '2%',
             }}
-          ><img src="pics/sport.png" width={200} alt="" /></div>
+          ><img src="pics/sport.png" className='imgcat' width={200} alt="" /></div>
           <div
             style={{
               marginLeft: '2%',
             }}
-          ><img src="pics/workandstudy.png" width={200} alt="" /></div>
+          ><img src="pics/workandstudy.png" className='imgcat' width={200} alt="" /></div>
           <div
             style={{
               marginLeft: '2%',
             }}
-          ><img src="pics/Homeandgarden.png" width={200} alt="" /></div>
+          ><img src="pics/Homeandgarden.png" className='imgcat' width={200} alt="" /></div>
         </div>
       </div>
 
@@ -245,7 +254,6 @@ const HomePage = () => {
               height: '50px',
               paddingLeft: '2%',
               paddingRight: '2%',
-              marginTop: '3%',
             }}
           >
             View All Ads
