@@ -1,13 +1,15 @@
-#Post {
-    background-size: cover;
-    width: 100%;
-    height: 700px;
+#float{
+position: absolute;
+top: 0;
+width: 100%;
+background-size: cover;
+background: linear-gradient(rgba(32, 51, 102, 0.5), rgba(112, 117, 163, 0.1))
 }
 #p::placeholder{
     color: #E31616;
 }
 #search{
-  margin-top: 18.8%;
+  margin-top: 24%;
 }
 #searchbar{
   background-color: #e31616aa;
@@ -234,3 +236,19 @@
   text-align: left;
   width: 100%;
 }
+@media screen and (max-width:1280px){
+  #imgs{
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+  }
+  
+  #search{
+    margin-top: 28%;
+    padding-left: 15%;
+  }
+  .imgcat{
+    width: 180px;
+  }
+  
+} 
