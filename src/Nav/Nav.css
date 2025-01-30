@@ -1,0 +1,88 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    font-family: Abhaya Libre SemiBold;
+    align-items: center;
+    padding: 15px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    margin: 0 30px;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar ul li a:hover {
+    color: #e31616;
+  }
+  
+  .navbar .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 100px) {
+    .navbar ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+    }
+  
+    .navbar ul.active {
+      display: flex;
+    }
+  
+    .navbar ul li {
+      text-align: center;
+      margin: 10px 0;
+    }
+  
+    .navbar .menu-toggle {
+      display: block;
+    }
+  }
+  #b11{
+    width:10%;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #E31616;
+    color: #F8E8DA;
+    margin-right: 100px;
+    font-family: Abhaya Libre SemiBold;
+    border: none;
+    font-size: larger;
+  }
+  
