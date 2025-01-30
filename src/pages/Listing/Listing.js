@@ -3,7 +3,7 @@ import './Listing.css';
 import axios from "axios";
 import Cards from './Cards';  // Assuming you have a Cards component
 import Sidebar from './Sidebar';  // Assuming you have a Sidebar component
-import Footer from './Footer';  // Assuming you have a Footer component
+import Footer from '../../Nav/Footer';  // Assuming you have a Footer component
 
 export default function Listing() {
     const [cards, setCards] = useState([]); // Initialize as an empty array
@@ -25,12 +25,12 @@ export default function Listing() {
     return (
         <div>
             <div className='post'>
-                <img src="./images/photoHome.png" alt="" className='img1' />
+                <img src="./images/photoHome.png" alt="" className='img1'/>
                 <div className='blur'>
                     <div className="title">
-                        <h1>ListingProduct</h1>
-                        <a href="index.html">Home</a> ---
-                        <a href="listing.html">ListingProduct</a>
+                        <h1 id='h11'>ListingProduct</h1>
+                        <a href="index.html" className='aa'>Home</a> ---
+                        <a href="listing.html" className='aa'>ListingProduct</a>
                     </div>
                 </div>
 
@@ -46,7 +46,6 @@ export default function Listing() {
                     ))}
             </div>
      
-            <Footer/>
         </div>
     );
 }

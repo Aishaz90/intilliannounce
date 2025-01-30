@@ -1,12 +1,12 @@
 #float{
-position: absolute;
-top: 0;
-width: 100%;
-background-size: cover;
-background: linear-gradient(rgba(32, 51, 102, 0.5), rgba(112, 117, 163, 0.1))
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-size: cover;
+  background: linear-gradient(rgba(32, 51, 102, 0.5), rgba(112, 117, 163, 0.1))
 }
 #p::placeholder{
-    color: #E31616;
+  color: #E31616;
 }
 #search{
   margin-top: 24%;
@@ -239,10 +239,12 @@ background: linear-gradient(rgba(32, 51, 102, 0.5), rgba(112, 117, 163, 0.1))
 @media screen and (max-width:1280px){
   #imgs{
     background-size: cover;
-    width: 100%;
+    width: 100.5%;
     height: 800px;
   }
-  
+  #float{
+    width: 100.5%;
+  }
   #search{
     margin-top: 28%;
     padding-left: 15%;

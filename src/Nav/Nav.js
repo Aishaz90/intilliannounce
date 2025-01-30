@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 export default function Nav() {
   return (
     <nav className="navbar navbar-expand-sm">
-      <div className="container-fluid" style={{ paddingInlineStart: "00px" }}>
+      <div className="container-fluid" style={{ paddingInlineStart: "10px" }}>
         <a className="navbar-brand" href="/">
           <img src="pics/logoo.png" alt="Logo" />
         </a>

@@ -72,7 +72,7 @@ const HomePage = () => {
               fontFamily: 'Abhaya Libre SemiBold',
               border: 'none',
               fontSize: 'x-large',
-              marginLeft: '-400px',
+              marginLeft: '400px',
               marginBottom:'10px',
             }}
             className='browsad'

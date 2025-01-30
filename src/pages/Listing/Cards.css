@@ -9,7 +9,7 @@
     margin-left: 23%;
 }
 
-.card{
+.cardd{
     display: grid;
     width: 60%;
     background-color: #FFF3F3;
@@ -21,11 +21,11 @@
     overflow: hidden; /* Prevents content overflow */
    
   }
-  .card:hover{
+  .cardd:hover{
     transform: scale(1.05) ;
   }
   
-  .card > * {
+  .cardd > * {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }
@@ -46,7 +46,7 @@
 }
 
 
- h5{
+ #h55{
     color: #020053;
     padding: 0% 4% 0% 4%;
     font-family: Abhaya Libre SemiBold;
@@ -59,7 +59,7 @@
     top:76%;
     padding: 0% 0% 5% 5%;
 }
-h4{
+#h44{
     color: red;
     padding: 0% 0% 5% 5%;
     font-size: 20px;

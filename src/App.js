@@ -10,15 +10,14 @@ export default  function App() {
   const location = useLocation(); 
   return (
     <div className="App">
-        <HomePage/>
       {location.pathname !== '/' && <Nav />}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/listing" element={<Listing/>} />
-        <Route path="/multimedia" element={<Multimedia/>} /> 
+         <Route path="/listing" element={<Listing/>} />
+       {/* <Route path="/multimedia" element={<Multimedia/>} />  */}
 
       </Routes>
-      {location.pathname !== '/' && <Footer/>}
+      {location.pathname !== '/'&&<Footer/>}
       
     </div>
   );
