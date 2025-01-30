@@ -3,8 +3,8 @@ import './Listing.css';
 import axios from "axios";
 import Cards from './Cards';  // Assuming you have a Cards component
 import Sidebar from './Sidebar';  // Assuming you have a Sidebar component
-import Footer from '../../Nav/Footer';  // Assuming you have a Footer component
-
+import Nav from '../../Nav/Nav';
+import Footer from '../../Nav/Footer';
 export default function Listing() {
     const [cards, setCards] = useState([]); // Initialize as an empty array
 
@@ -27,25 +27,29 @@ export default function Listing() {
             <div className='post'>
                 <img src="./images/photoHome.png" alt="" className='img1'/>
                 <div className='blur'>
+                    <Nav />
                     <div className="title">
                         <h1 id='h11'>ListingProduct</h1>
-                        <a href="index.html" className='aa'>Home</a> ---
+                        <a href="/" className='aa'>Home</a> ---
                         <a href="listing.html" className='aa'>ListingProduct</a>
                     </div>
                 </div>
 
             
             </div>
-            <Sidebar/>
-            <div>
-                <img src="./images/off.jpg" alt="" id="offer"/>
+                <div>
+                <Sidebar/>
+                <div>
+                    <img src="./images/off.jpg" alt="" id="offer"/>
+                </div>
+                <div className="cards-container">
+                        {cards.map((card) => (
+                            <Cards key={card.id} Carte={card} />
+                        ))}
+                </div>
             </div>
-            <div className="cards-container">
-                    {cards.map((card) => (
-                        <Cards key={card.id} Carte={card} />
-                    ))}
-            </div>
-     
+            
+            <Footer/>
         </div>
     );
 }

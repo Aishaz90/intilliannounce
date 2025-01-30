@@ -3,7 +3,7 @@
   top: 0;
   width: 100%;
   background-size: cover;
-  background: linear-gradient(rgba(32, 51, 102, 0.5), rgba(112, 117, 163, 0.1))
+  /* background: linear-gradient(rgba(32, 51, 102, 0.5), rgba(112, 117, 163, 0.1)) */
 }
 #p::placeholder{
   color: #E31616;

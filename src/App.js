@@ -23,14 +23,14 @@ export default  function App() {
   }, [location]);
   return (
     <div className="App">
-      {location.pathname !== '/' && <Nav />}
+      {location.pathname !== '/' &&location.pathname !== '/listing'&& <Nav />}
       <Routes>
         <Route path="/" element={<HomePage />} />
          <Route path="/listing" element={<Listing/>} />
        {/* <Route path="/multimedia" element={<Multimedia/>} />  */}
 
       </Routes>
-      {location.pathname !== '/'&&<Footer/>}
+      {location.pathname !== '/'&&location.pathname !== '/listing'&& <Footer/>}
       
     </div>
   );

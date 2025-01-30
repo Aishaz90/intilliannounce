@@ -1,6 +1,6 @@
 /*  */
 .post{
-    height: 550px;
+    height: 650px;
     width: 100%;
     background-color: #7B84B4;
     
@@ -12,7 +12,7 @@
     top: 10%; 
 }
 .blur{
-    height: 550px;
+    height: 650px;
     width: 100%;
     position: absolute;
     top: 0;
@@ -29,8 +29,6 @@
     color: black;
     font-size: 20px;
     margin-left: 6px;
- 
-    
 }
 .aa:hover{
     color: black;
@@ -44,6 +42,7 @@
 #offer{
     width: 20%;
     height: 550px;
-    position: absolute;
-    top: 230%;
-}
+    margin-top: 10%;
+    /* position: absolute;
+    top: 230%;*/
+} 

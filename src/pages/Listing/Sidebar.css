@@ -3,14 +3,11 @@
     color: #020053;
     font-family: Abhaya Libre SemiBold;
     font-weight: bold;
-   
-    
 }
 .navSide{
     background-color: #727bbca2;
     width: 23%;
-    position: absolute;
-    top: 105%;
+    margin-top: 10%;
     border-radius: 0px 20px 20px 0px;
     padding-bottom: 3%;
 }

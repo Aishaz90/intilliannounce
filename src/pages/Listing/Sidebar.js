@@ -14,7 +14,6 @@ export default function Sidebar() {
         { name: "Vehicles", imgSrc: "images/Vehicules.png", link: "#" }]
   return (
     <div className="navSide">
-        
             {categories.map((category,index)=>(
                 <div key={index} className="cate-Item">
                <Link to={category.link}>
@@ -23,9 +22,6 @@ export default function Sidebar() {
                 </Link>
             </div>
             ))}
-        
-
-      
     </div>
   )
 }
