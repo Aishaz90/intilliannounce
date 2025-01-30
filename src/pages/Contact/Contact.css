@@ -1,0 +1,33 @@
+#container{
+    width: 80%;
+    background-color:#FFF3F3 ;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 25px;
+    margin-left:10%;
+    padding: 2%;
+}
+#container2{
+    width: 80%;
+    background-color:#FFF3F3 ;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 25px;
+    margin-top: 6%;
+    margin-left:10%;
+    display: flex;
+}
+.divside{
+    background-color: #FF4367;
+    width: 10px;
+    height: 60px;
+    border-radius: 0px 15px 15px 0px;
+}
+.form-control::placeholder{
+   /* padding-left: 20px; */
+    color: #010053a0;
+}
+.form-control{
+    padding-left: 70px;
+}
+@media screen and (max-width:1280px){
+
+}
