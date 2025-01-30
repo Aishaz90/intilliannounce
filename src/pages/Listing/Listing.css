@@ -1,0 +1,53 @@
+body{
+    background-color:#FFF3F3 ;
+    /* display: inline; */
+    margin: 0px;
+ }
+.post{
+    height: 550px;
+    width: 100%;
+    background-color: #7B84B4;
+    
+}
+.img1{
+    position: absolute;
+    width: 57%;
+    left: 40%;
+    top: 10%; 
+}
+.blur{
+    height: 550px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(#0501318d, #21178f72,#5d68ce46);
+}
+h1{
+    color:#F8E8DA;
+    font-size: 67px;
+    font-family: Abhaya Libre SemiBold;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin-left: 6px;
+ 
+    
+}
+a:hover{
+    color: black;
+}
+.title{
+    text-align:justify;
+    position: relative;
+    top: 32%;
+    margin-left: 5%;
+}
+#offer{
+    width: 20%;
+    height: 550px;
+    position: absolute;
+    top: 230%;
+}
