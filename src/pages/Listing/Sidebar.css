@@ -1,0 +1,26 @@
+
+.text{
+    color: #020053;
+    font-family: Abhaya Libre SemiBold;
+    font-weight: bold;
+   
+    
+}
+.navSide{
+    background-color: #727bbca2;
+    width: 23%;
+    position: absolute;
+    top: 105%;
+    border-radius: 0px 20px 20px 0px;
+    padding-bottom: 3%;
+}
+
+.cate-Item{
+    padding: 40px 0px 0px 25px ;
+}
+.icon{
+  width: 15%;
+  
+}
+
+

@@ -1,0 +1,78 @@
+/* Footer Background */
+footer {
+    background-size: cover;
+    margin-top: 10%;
+    width: 100%;
+    height: 600px;
+    background-color: #7B84B4;
+  }
+  
+  /* Subscribe Section */
+  .subscribe-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;
+  }
+  
+  .textSub {
+    font-family: Libre SemiBold;
+    font-size: 35px;
+    margin-right: 5%;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 50px;
+  }
+  
+  .form-control {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #BBB3B3;
+    border: none;
+    font-size: 16px;
+  }
+  
+  #subscribe-btn {
+    padding: 10px 20px;
+    background-color: #E31616;
+    color: #FFF3F3;
+    cursor: pointer;
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    padding: 0 5%;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-title {
+    font-family: Libre SemiBold;
+    font-size: 35px;
+    text-align: center;
+  }
+  
+  .footer-line {
+    width: 80%;
+    border: #FFF3F3 solid 2px;
+    margin-top: 0;
+    
+  }
+  
+  .footer-item {
+    font-family: Libre SemiBold;
+    font-size: 25px;
+    color: #fff3f3b1;
+    line-height: 200%;
+  }
+  
