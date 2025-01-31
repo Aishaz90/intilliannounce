@@ -7,9 +7,9 @@ export default function Nav() {
   return (
     <nav className="navbar navbar-expand-sm">
       <div className="container-fluid" style={{ paddingInlineStart: "10px" }}>
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           <img src="pics/logoo.png" alt="Logo" />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"

@@ -8,6 +8,7 @@ import Multimedia from './pages/Multimedia/Multimedia';
 import { useEffect } from 'react';
 import Categories from './pages/Categories/Categories';
 import Contact from './pages/Contact/Contact';
+import Login from './pages/Login/Login';
 export default  function App() {
   const location = useLocation();
   useEffect(() => {
@@ -23,15 +24,16 @@ export default  function App() {
   }, [location]);
   return (
     <div className="App">
-      {location.pathname !== '/' &&location.pathname !== '/listing'&&location.pathname !== '/categories'&&location.pathname !== '/contact'&& <Nav />}
+      {location.pathname !== '/' &&location.pathname !== '/listing'&&location.pathname !== '/categories'&&location.pathname !== '/contact'&&location.pathname !== '/login'&& <Nav />}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/listing" element={<Listing/>} />
         <Route path="/multimedia" element={<Multimedia/>} /> 
         <Route path="/categories" element={<Categories/>} />
-        <Route path="/contact" element={<Contact/>} />  
+        <Route path="/contact" element={<Contact/>} /> 
+        <Route path="/login" element={<Login/>} />   
       </Routes>
-      {location.pathname !== '/'&&location.pathname !== '/listing'&&location.pathname !== '/categories'&& location.pathname !== '/contact'&&<Footer/>}
+      {location.pathname !== '/'&&location.pathname !== '/listing'&&location.pathname !== '/categories'&& location.pathname !== '/contact'&&location.pathname !== '/login'&&<Footer/>}
     </div>
   );
 }
