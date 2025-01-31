@@ -4,9 +4,7 @@
     gap: 2rem; /* Space between cards */
     justify-content: center; /* Centers cards horizontally */
     align-items: stretch; /* Ensures cards have equal height */
-    margin-top: 8%;/* Adds margin around the container */
     padding: 1rem;
-    margin-left: 23%;
 }
 
 .cardd{

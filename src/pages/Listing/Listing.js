@@ -36,18 +36,19 @@ export default function Listing() {
                     </div>
                 </div>
             </div>
-                <div>
-                <Sidebar/>
-                <div>
-                    <img src="./images/off.jpg" alt="" id="offer"/>
-                </div>
+            <div id='main'>
                 <div className="cards-container">
                         {cards.map((card) => (
                             <Cards key={card.id} Carte={card} />
                         ))}
                 </div>
+                <div id='side'>
+                    <Sidebar/>
+                    <div>
+                        <img src="./images/off.jpg" alt="" id="offer"/>
+                    </div>
+                </div>
             </div>
-            
             <Footer/>
         </div>
     );
