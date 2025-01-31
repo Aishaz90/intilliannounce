@@ -9,20 +9,21 @@ import { Link } from 'react-router-dom';
 export default function Listing() {
     const [cards, setCards] = useState([]); // Initialize as an empty array
 
+    const API_URL = process.env.REACT_APP_API_URL || "http://apijihane.wuaze.com/api";
+
     useEffect(() => {
         const fetchArticles = async () => {
             try {
-                const response = await axios.get("http://127.0.0.1:8000/api/articles");
-                const filteredCards = response.data.filter(article => article.id <= 12); // Filter by id
+                const response = await axios.get(`${API_URL}/articles`);
+                const filteredCards = response.data.filter(article => article.id <= 12);
                 setCards(filteredCards);
-                // setCards(response.data); // Update state with API response
             } catch (error) {
                 console.error("Error fetching articles:", error);
             }
         };
         fetchArticles();
     }, []);
-
+    
     return (
         <div>
             <div className='post'>
