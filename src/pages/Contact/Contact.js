@@ -42,7 +42,7 @@ export default function Contact() {
             <input type="text" placeholder="Enter your Mail Address ..." className="form-control" style={{ width: '48%', display: 'inline-block', marginLeft: '2.5%', height: '50px', background: 'url(pics/p/Vector-1.png) no-repeat 10px 50%' }} />
             <input type="text" placeholder="Subject" style={{ display: 'block', width: '100%', height: '50px', background: 'url(pics/p/Vector-2.png) no-repeat 20px 50%' }} className="form-control mt-3" />
             <textarea name="msg" placeholder="Type your Message ..." className="form-control w-100 mt-3" style={{ height: '300px', background: 'url(pics/p/Vector.png) no-repeat 10px 5%' }}></textarea>
-            <input type="submit" value="Send" className="btn" style={{ backgroundColor: '#E31616', color: '#F8E8DA', width: '50%', marginTop: '50px', fontWeight: 'bolder', fontFamily: 'Abhaya Libre SemiBold' }} />
+            <input type="submit" value="Send" className="b1" style={{marginTop: '50px', fontWeight: 'bolder', fontFamily: 'Abhaya Libre SemiBold' }} />
           </form>
         </div>
         
