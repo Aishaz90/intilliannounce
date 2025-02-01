@@ -12,7 +12,10 @@ export default function Listing() {
     useEffect(() => {
         const fetchArticles = async () => {
             try {
-                const response = await axios.get("http://127.0.0.1:8000/api/articles");
+                const API_URL = process.env.NODE_ENV === 'development' 
+                ? 'http://127.0.0.1:8000/api/articles' 
+                : 'https://your-production-api.com/api/articles';
+                const response = await axios.get(API_URL);
                 const filteredCards = response.data.filter(article => article.id <= 12); // Filter by id
                 setCards(filteredCards);
                 // setCards(response.data); // Update state with API response
