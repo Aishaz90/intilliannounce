@@ -38,9 +38,9 @@ export default function Listing() {
             </div>
             <div id='main'>
                 <div className="cards-container">
-                        {cards.map((card) => (
-                            <Cards key={card.id} Carte={card} />
-                        ))}
+                    {cards.map((card) => (
+                        <Cards key={card.id} Carte={card} />
+                    ))}
                 </div>
                 <div id='side'>
                     <Sidebar/>
