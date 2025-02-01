@@ -14,7 +14,7 @@ export default function Listing() {
             try {
                 const API_URL = process.env.NODE_ENV === 'development' 
                 ? 'http://127.0.0.1:8000/api/articles' 
-                : 'https://apijihane.wuaze.com/api/articles';
+                : 'http://apijihane.wuaze.com/api/articles';
                 const response = await axios.get(API_URL);
                 const filteredCards = response.data.filter(article => article.id <= 12); // Filter by id
                 setCards(filteredCards);
