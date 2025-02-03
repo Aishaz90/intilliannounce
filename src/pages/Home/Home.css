@@ -65,11 +65,11 @@
 }
 
 .card {
+  background-color:#FFF3F3 ;
   position: relative;
   border-radius: 15px;
   width: 85%;
   overflow: hidden;
-  background-color: #fff;
   box-shadow: 0 4px 8px rgba(41, 39, 39, 0.1);
   padding: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -78,6 +78,7 @@
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color:#FFF3F3 ;
 }
 
 #h5{

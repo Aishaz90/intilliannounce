@@ -218,7 +218,7 @@ const HomePage = () => {
         </div>
         <div className="card-container">
           {cards.map((product) => (
-            <div className="card">
+            <div className="card" style={{backgroundColor:'#FFF3F3'}}>
               <img src={product.image} alt={product.title}  id="img"/>
               <h5 id='h5'>{product.contenu}</h5>
               <img src="images/Heart.png" alt="Favorite" width="25px" style={{position:"absolute", left: '87%', top: '56%'}}/>
@@ -241,7 +241,7 @@ const HomePage = () => {
         <div className="card-container slider">
         <div className="slider-track">
           {[...cards,...cards].map((product,index) => (
-            <div className="card c" key={index}>
+            <div className="card c" style={{backgroundColor:'#FFF3F3'}} key={index}>
               <img src={product.image} alt={product.contenu}  id="img"/>
               <h5 id='h5'>{product.contenu}</h5>
               <img src="images/Heart.png" alt="Favorite" width="25px" style={{position:"absolute", left: '87%', top: '56%'}}/>
