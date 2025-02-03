@@ -2,7 +2,9 @@
 .text{
     color: #020053;
     font-family: Abhaya Libre SemiBold;
+    font-size: 1.15rem;
     font-weight: bold;
+    cursor: pointer;
 }
 .navSide{
     background-color: #727bbca2;
@@ -15,8 +17,13 @@
 .cate-Item{
     padding: 40px 0px 0px 25px ;
 }
+.link{
+    text-decoration: none;
+    color: #020053;
+
+}
 .icon{
-  width: 15%;
+  width: 20%;
   
 }
 

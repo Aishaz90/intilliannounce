@@ -1,15 +1,15 @@
 .cards-container {
-    display: flex; /* Enables flex layout */
-    flex-wrap: wrap; /* Allows cards to wrap to the next row on smaller screens */
-    gap: 2rem; /* Space between cards */
-    justify-content: center; /* Centers cards horizontally */
-    align-items: stretch; /* Ensures cards have equal height */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; 
+    justify-content: center; 
+    align-items: stretch; 
     padding: 1rem;
 }
 
 .cardd{
     display: grid;
-    width: 60%;
+    width: 70%;
     background-color: #FFF3F3;
     max-width: 18rem;
     height: 400px;
@@ -54,15 +54,17 @@
 }
 .map{
     position: absolute;
-    top:76%;
+    top:77%;
     padding: 0% 0% 5% 5%;
+    width: 15%;
+    height: 42px;
 }
 #h44{
     color: red;
     padding: 0% 0% 5% 5%;
     font-size: 20px;
     position: absolute;
-    top: 82%;
+    top: 90%;
 }
 .date{
     color: #BBB3B3;

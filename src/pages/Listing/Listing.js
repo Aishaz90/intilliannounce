@@ -11,7 +11,7 @@ export default function Listing() {
     const [cards, setCards] = useState([]);
     useEffect(() => {
         // Use local JSON data instead of API call
-        const filteredCards = articles.filter(article => article.id <= 12);
+        const filteredCards = articles.filter(article => article.id);
         setCards(filteredCards);
     }, []);
     return (
@@ -35,9 +35,7 @@ export default function Listing() {
                 </div>
                 <div id='side'>
                     <Sidebar/>
-                    <div>
-                        <img src="./images/off.jpg" alt="" id="offer"/>
-                    </div>
+                    <img src="./images/off.jpg" alt="" id="offers"/>
                 </div>
             </div>
             <Footer/>

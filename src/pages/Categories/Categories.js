@@ -1,14 +1,14 @@
 import React from 'react';
 import Nav from '../../Nav/Nav';
 import Footer from '../../Nav/Footer';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import "./Categories.css";
-
-const categories = [
+export default function Categories() {
+  const categories = [
     {
-      name: "MultiMedia",
+      name: "Multimedia",
       image: "pics/pc1.png",
-      link: "/multimedia",
+      link: "/Multimedia",
       subcategories: [
         ["Phones", "Personal computer", "Tablet", "Smartphones"],
         ["Laptop", "Phone Accessories", "Headphones", "Tablet Parts"],
@@ -19,7 +19,7 @@ const categories = [
     {
       name: "Household Appliances",
       image: "pics/image7.png",
-      link: "/multimedia",
+      link: "/Household Appliances",
       subcategories: [
         ["Refrigerators", "Microwaves", "Dishwashers", "Cooktops"],
         ["Dryers", "Toasters & Toaster Ovens", "Blenders & Mixers", "Air Fryers"],
@@ -29,7 +29,7 @@ const categories = [
     {
       name: "Sport",
       image: "pics/image2.png",
-      link: "/multimedia",
+      link: "/Sport",
       subcategories: [
         ["Sport clothes", "Dumbbell set", "Treadmill", "Traction bar"],
         ["Protein", "Cotton", "Leather", "Shoes"],
@@ -39,7 +39,7 @@ const categories = [
     {
       name: "Pets",
       image: "pics/image5.png",
-      link: "/multimedia",
+      link: "/Pets",
       subcategories: [
         ["Dogs", "Cats", "Birds", "Fish"],
         ["Beds & Blankets", "Crates & Carriers", "Litter & Waste Management", "Training Tools"],
@@ -49,7 +49,7 @@ const categories = [
     {
       name: "Home And Garden",
       image: "pics/image6.png",
-      link: "/multimedia",
+      link: "/Home And Garden",
       subcategories: [
         ["Home", "Villa", "Studio", "Apartment"],
         ["Cottage", "Duplex", "Leather", "Plants & Flowers"],
@@ -59,7 +59,7 @@ const categories = [
     {
       name: "Clothes",
       image: "pics/image4.png",
-      link: "/multimedia",
+      link: "/Clothes",
       subcategories: [
         ["Women's Clothing", "Men's Clothing", "Kids Clothing"],
         ["Shoes", "Cotton", "Caftan"],
@@ -69,7 +69,7 @@ const categories = [
     {
       name: "Work And Study",
       image: "pics/image3.png",
-      link: "/multimedia",
+      link: "/Work And Study",
       subcategories: [
         ["Notebooks", "Bags", "Marker"],
         ["Pencils", "Office", "Backpacks"],
@@ -79,7 +79,7 @@ const categories = [
     {
       name: "Vehicles",
       image: "pics/image1.png",
-      link: "/multimedia",
+      link: "/Vehicles",
       subcategories: [
         ["Cars", "Bicycles", "Trucks", "Buses"],
         ["Air Bike", "Mobility Scooters", "Motorcycles"],
@@ -87,8 +87,10 @@ const categories = [
       ]
     }
   ];
-  
-export default function Categories() {
+  const navigate = useNavigate();
+  const handleCategoryClick = (category) => {
+    navigate(category.link);
+  };
   return (
     <div>
       <div className='post'>
@@ -106,7 +108,7 @@ export default function Categories() {
       <div id="containere">
         {categories.map((category, index) => (
           <div className="cats" key={index}>
-            <div id="titre">
+            <div id="titre" onClick={() => handleCategoryClick(category)}>
               <img src={category.image} alt={category.name} />
               <Link 
                 to={category.link} 

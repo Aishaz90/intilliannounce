@@ -35,18 +35,19 @@
     top: 10%;
     margin-left: 8%;
 }
-#offer{
+#offers{
     width: 100%;
     height: 550px;
-    margin-top: 10%;
+    margin-top: 70%;
     /* position: absolute;
     top: 230%;*/
 } 
 #side{
-    width: 50%;
+    width: 20%;
 }
 .cards-container{
     padding: 0;
+    width: 90%;
 }
 #main{
     display: flex;
