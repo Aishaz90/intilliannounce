@@ -121,7 +121,7 @@
   display: flex;
   gap:30px; /* Adds spacing between cards */
   width: max-content;
-  animation: slide 50s linear infinite;
+  animation: slide 20s linear infinite;
 }
 
 .slider .c{
@@ -132,10 +132,10 @@
 }
 @keyframes slide {
   from {
-    transform: translateX(0);
+    transform: translateX(0)
   }
   to {
-    transform: translateX(-50%);  
+    transform: translateX(-75%)/* Moves halfway and rotates 180 degrees */
   }
 }
 .hero-heading {

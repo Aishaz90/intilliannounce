@@ -7,7 +7,7 @@ import "./Categories.css";
 const categories = [
     {
       name: "MultiMedia",
-      image: "pics/pc 1.png",
+      image: "pics/pc1.png",
       link: "/multimedia",
       subcategories: [
         ["Phones", "Personal computer", "Tablet", "Smartphones"],
@@ -18,7 +18,7 @@ const categories = [
     },
     {
       name: "Household Appliances",
-      image: "pics/image 7.png",
+      image: "pics/image7.png",
       link: "/multimedia",
       subcategories: [
         ["Refrigerators", "Microwaves", "Dishwashers", "Cooktops"],
@@ -28,7 +28,7 @@ const categories = [
     },
     {
       name: "Sport",
-      image: "pics/image 2.png",
+      image: "pics/image2.png",
       link: "/multimedia",
       subcategories: [
         ["Sport clothes", "Dumbbell set", "Treadmill", "Traction bar"],
@@ -38,7 +38,7 @@ const categories = [
     },
     {
       name: "Pets",
-      image: "pics/image 5.png",
+      image: "pics/image5.png",
       link: "/multimedia",
       subcategories: [
         ["Dogs", "Cats", "Birds", "Fish"],
@@ -48,7 +48,7 @@ const categories = [
     },
     {
       name: "Home And Garden",
-      image: "pics/image 6.png",
+      image: "pics/image6.png",
       link: "/multimedia",
       subcategories: [
         ["Home", "Villa", "Studio", "Apartment"],
@@ -58,7 +58,7 @@ const categories = [
     },
     {
       name: "Clothes",
-      image: "pics/image 4.png",
+      image: "pics/image4.png",
       link: "/multimedia",
       subcategories: [
         ["Women's Clothing", "Men's Clothing", "Kids Clothing"],
@@ -68,7 +68,7 @@ const categories = [
     },
     {
       name: "Work And Study",
-      image: "pics/image 3.png",
+      image: "pics/image3.png",
       link: "/multimedia",
       subcategories: [
         ["Notebooks", "Bags", "Marker"],
@@ -78,7 +78,7 @@ const categories = [
     },
     {
       name: "Vehicles",
-      image: "pics/image 1.png",
+      image: "pics/image1.png",
       link: "/multimedia",
       subcategories: [
         ["Cars", "Bicycles", "Trucks", "Buses"],

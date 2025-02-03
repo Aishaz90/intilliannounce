@@ -1,31 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './Listing.css';
-import axios from "axios";
+// import axios from "axios";
 import Cards from './Cards';  // Assuming you have a Cards component
 import Sidebar from './Sidebar';  // Assuming you have a Sidebar component
 import Nav from '../../Nav/Nav';
 import Footer from '../../Nav/Footer';
 import { Link } from 'react-router-dom';
+import articles from '../../data/article.json'; // Adjust path as needed
 export default function Listing() {
-    const [cards, setCards] = useState([]); // Initialize as an empty array
-
+    const [cards, setCards] = useState([]);
     useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                const API_URL = process.env.NODE_ENV === 'development' 
-                ? 'http://127.0.0.1:8000/api/articles' 
-                : 'http://apijihane.wuaze.com/api/articles';
-                const response = await axios.get(API_URL);
-                const filteredCards = response.data.filter(article => article.id <= 12); // Filter by id
-                setCards(filteredCards);
-                // setCards(response.data); // Update state with API response
-            } catch (error) {
-                console.error("Error fetching articles:", error);
-            }
-        };
-        fetchArticles();
+        // Use local JSON data instead of API call
+        const filteredCards = articles.filter(article => article.id <= 12);
+        setCards(filteredCards);
     }, []);
-
     return (
         <div>
             <div className='post'>

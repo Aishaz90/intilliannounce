@@ -1,61 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import postImage from '../../pics/post2.png';
 import Nav from '../../Nav/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Footer from '../../Nav/Footer';
+import articles from '../../data/article.json'; // Adjust path as needed
 const HomePage = () => {
-  const products = [
-    {
-      id: 1,
-      image: "images/dogs.png",
-      title: "Dog Bed Pony Kolosony",
-      price: "400DH",
-      location: "Tanger",
-      date: "25, juin, 2024",
-    },
-    {
-      id: 2,
-      image: "images/talon1.jpg",
-      title: "Christian Louboutin So Kate Patent Red",
-      price: "1400DH",
-      location: "Tanger",
-      date: "25, juin, 2024",
-    },
-    {
-      id: 3,
-      image: "images/notbok.jpg",
-      title: "Notebook Pretty in Pastels",
-      price: "60DH",
-      location: "Tanger",
-      date: "25, juin, 2024",
-    },
-    {
-      id: 4,
-      image: "images/pcSamsung.jpg",
-      title: "Samsung Galaxy Book Snapdragon 8cx Gen X",
-      price: "6000DH",
-      location: "Tanger",
-      date: "25, juin, 2024",
-    },
-    {
-      id: 5,
-      image: "images/cupra.jpg",
-      title: "Cupra Formentor",
-      price: "750000DH",
-      location: "Tanger",
-      date: "25, juin, 2024",
-    },
-    {
-      id: 6,
-      image: "images/Rectangle 113 (1).png",
-      title: "Washing Machine Samsung 11 kg charcoal WD4000",
-      price: "5000DH",
-      location: "Tanger",
-      date: "25, juin, 2024",
-    },
-  ];
+  const [cards, setCards] = useState([]);
+  useEffect(() => {
+      // Use local JSON data instead of API call
+      const filteredCards = articles.filter(article => article.id <= 6);
+      setCards(filteredCards);
+  }, []);
   return (
     <div id="Post">
       <img src="pics/post2.png" width={1519} height={700} id='imgs' alt="" />
@@ -260,15 +217,15 @@ const HomePage = () => {
           </button>
         </div>
         <div className="card-container">
-          {products.map((product) => (
+          {cards.map((product) => (
             <div className="card">
               <img src={product.image} alt={product.title}  id="img"/>
-              <h5 id='h5'>{product.title}</h5>
+              <h5 id='h5'>{product.contenu}</h5>
               <img src="images/Heart.png" alt="Favorite" width="25px" style={{position:"absolute", left: '87%', top: '56%'}}/>
               <img src="images/MapPinLine.png" alt="Location" width="13%" height="10%" id="map"/>
               <span style={{color: '#929292', position: 'absolute', top: '77%',left: '16%'}}>{product.location}</span>
               <p style={{color:' #BBB3B3', float: 'right', padding:'5%', marginTop: '11%',marginLeft:'60%'}}>{product.date}</p>
-              <h4 id='h4'>{product.price}</h4>
+              <h4 id='h4'>{product.prix} DH</h4>
             </div>
           ))}
         </div> 
@@ -283,15 +240,15 @@ const HomePage = () => {
         </div>
         <div className="card-container slider">
         <div className="slider-track">
-          {[...products, ...products].map((product) => (
-            <div className="card c">
-              <img src={product.image} alt={product.title}  id="img"/>
-              <h5 id='h5'>{product.title}</h5>
+          {[...cards,...cards].map((product,index) => (
+            <div className="card c" key={index}>
+              <img src={product.image} alt={product.contenu}  id="img"/>
+              <h5 id='h5'>{product.contenu}</h5>
               <img src="images/Heart.png" alt="Favorite" width="25px" style={{position:"absolute", left: '87%', top: '56%'}}/>
               <img src="images/MapPinLine.png" alt="Location" width="13%" height="10%" id="map"/>
               <span style={{color: '#929292', position: 'absolute', top: '77%',left: '16%'}}>{product.location}</span>
               <p style={{color:' #BBB3B3', float: 'right', padding:'5%', marginTop: '11%',marginLeft:'60%'}}>{product.date}</p>
-              <h4 id='h4'>{product.price}</h4>
+              <h4 id='h4'>{product.prix} DH</h4>
             </div>
           ))}
           </div>
