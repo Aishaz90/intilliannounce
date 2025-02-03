@@ -84,7 +84,7 @@ export default function Login() {
             </div>
             <div id="alinks">
               <Link
-                to=""
+                to="/adminlogin"
                 style={{ textDecoration: 'none', color: '#4A429A' }}
               >
                 <img
@@ -103,11 +103,11 @@ export default function Login() {
               margin: '0% 6% 0% 6%',
             }}
           >
-            Don't you have an account?
-          </p>
-          <Link id="sign" to="/sigup" style={{ color: '#FA5252' }}>
+            Don't you have an account?<Link id="sign" to="/signup" style={{ color: '#FA5252' }}>
             Sign Up
           </Link>
+          </p>
+          
         </div>
       </div>
     </div>

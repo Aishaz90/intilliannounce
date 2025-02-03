@@ -4,32 +4,39 @@ import './Signup.css'
 export default function Signup() {
   return (
     <div id="imgcont">
-      <img src="pics/login.png" className="imge" alt="" />
+      <img src="pics/singup.png" className="imge" alt="" />
       <div id="divup">
         <Link className="navbar-brand" to="/">
           <img src="pics/logoo.png" alt="Logo" />
         </Link>
         <div id="formulaire">
-          <h2 id='hh2'>Login</h2>
-          <div id="inputs">
-            <label
-              htmlFor=""
-              style={{
-                color: '#020053',
-                fontFamily: 'Abhaya Libre SemiBold',
-              }}
-            >
-              User name or email address
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              style={{
-                backgroundColor: '#FFF3F3',
-                border: '1px solid #020053',
-                marginBottom: '5px',
-              }}
-            />
+          <h2 id='hh2'>Sign Up</h2>
+         <div id="inputs">
+          <label style={{ color: "#020053", fontFamily: "Abhaya Libre SemiBold" }}>
+          Username
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          style={{
+            backgroundColor: "#FFF3F3",
+            border: "1px solid #020053",
+            marginBottom: "5px",
+          }}
+        />
+         <label style={{ color: "#020053", fontFamily: "Abhaya Libre SemiBold" }}>
+          Email
+        </label>
+        <input
+          type="email"
+          className="form-control"
+          style={{
+            backgroundColor: "#FFF3F3",
+            border: "1px solid #020053",
+            marginBottom: "5px",
+          }}
+        />
+
             <label
               htmlFor=""
               style={{
@@ -47,26 +54,30 @@ export default function Signup() {
                 border: '1px solid #020053',
               }}
             />
+            <label style={{ color: "#020053", fontFamily: "Abhaya Libre SemiBold" }}>
+          Confirm Password
+        </label>
+        <input
+          type="password"
+          className="form-control"
+          style={{
+            backgroundColor: "#FFF3F3",
+            border: "1px solid #020053",
+          }}
+        />
           </div>
-          <button
-            to="#"
-            style={{
-              padding: '10px',
-              borderRadius: '10px',
-              border:'none',
-              backgroundColor: '#FA5252',
-              color: '#f5f2f2ea',
-              fontFamily: 'Abhaya Libre SemiBold',
-              margin: '10% 0% 0% 5%',
-              width:'20%',
-            }}
-          >
-            Login
-          </button>
-          <Link to="#" style={{ color: '#FA5252' }} id="forget">
-            Forget your password
-          </Link>
-          <img src="images/or.png" alt="" id="or" />
+          <div className="terms">
+            <input type="checkbox" id="terms-checkbox" />
+            <label htmlFor="terms-checkbox">
+              By registering, you accept our{" "}
+              <Link to="/terms" style={{
+            backgroundColor: "#FFF3F3",
+            color: '#fa5252',
+          }}>Terms & Conditions</Link>
+            </label>
+          </div>
+          <button className="signup-btn">Sign Up</button>
+          <img src="images/or.png" alt="" id="orr" />
           <div>
             <div id="alinks">
               <Link
@@ -81,32 +92,11 @@ export default function Signup() {
                 Continue with Google
               </Link>
             </div>
-            <div id="alinks">
-              <Link
-                to=""
-                style={{ textDecoration: 'none', color: '#4A429A' }}
-              >
-                <img
-                  src="images/User.png"
-                  alt=""
-                  style={{ width: '20px', margin: '2%' }}
-                />
-                Continue as Admin
-              </Link>
-            </div>
+            <p className="login-text">
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
           </div>
-          <p
-            style={{
-              color: '#020053',
-              fontFamily: 'Abhaya Libre SemiBold',
-              margin: '0% 6% 0% 6%',
-            }}
-          >
-            Don't you have an account?
-          </p>
-          <Link id="sign" to="/sigup" style={{ color: '#FA5252' }}>
-            Sign Up
-          </Link>
+          
         </div>
       </div>
     </div>
