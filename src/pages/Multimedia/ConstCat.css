@@ -72,3 +72,16 @@
 .aaa:hover{
     color: #020053;
 }
+@media screen and (max-width:1280px){
+    #h111{
+        font-size: 4rem;
+    }
+    .aaa{
+        font-size: 2rem;
+        margin-left: 6px;
+    }
+    .title{
+        margin-top: 3%;
+        margin-left: 7%;
+    }
+}

@@ -63,4 +63,23 @@
         height: 650px;
         width: 100.5%;
     }
+    #side{
+        width: 25%;
+    }
+    .cards-container{
+        padding: 0;
+    }
+    #h11{
+        color:#F8E8DA;
+        font-size: 5.3rem;
+        font-family: Abhaya Libre SemiBold;
+        font-weight: bold;
+    }
+    .aa{
+        text-decoration: none;
+        font-family: Abhaya Libre SemiBold;
+        color: #020053;
+        font-size: 2.2rem;
+        margin-left: 6px;
+    }
 }
