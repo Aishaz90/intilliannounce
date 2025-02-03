@@ -69,32 +69,35 @@ export default function Login() {
           </Link>
           <img src="images/or.png" alt="" id="or" />
           <div>
-            <div id="alinks">
-              <Link
+            <Link
                 to=""
                 style={{ textDecoration: 'none', color: '#4A429A' }}
               >
-                <img
+              <div id="alinks">
+              <img
                   src="images/GoogleChromeLogo.png"
                   alt=""
                   style={{ width: '20px', margin: '2%' }}
                 />
                 Continue with Google
-              </Link>
+              
             </div>
-            <div id="alinks">
-              <Link
+            </Link>
+            <Link
                 to="/adminlogin"
                 style={{ textDecoration: 'none', color: '#4A429A' }}
               >
+              <div id="alinks">
+              
                 <img
                   src="images/User.png"
                   alt=""
                   style={{ width: '20px', margin: '2%' }}
                 />
                 Continue as Admin
-              </Link>
+              
             </div>
+            </Link>
           </div>
           <p
             style={{
