@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
+import { useNavigate,Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import postImage from '../../pics/post2.png';
 import Nav from '../../Nav/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Footer from '../../Nav/Footer';
-import articles from '../../data/article.json'; // Adjust path as needed
+import articles from '../../data/article.json';
 const HomePage = () => {
   const [cards, setCards] = useState([]);
   useEffect(() => {
@@ -13,6 +15,24 @@ const HomePage = () => {
       const filteredCards = articles.filter(article => article.id <= 6);
       setCards(filteredCards);
   }, []);
+  const { token} = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  const handlePostAdClick = (e) => {
+    if (!token) {
+      e.preventDefault();
+      navigate('/login');
+    }
+  };
+  const [city, setCity] = useState('');
+  const [category, setCategory] = useState('');
+  const [keyword, setKeyword] = useState('');
+  const handleSearch = () => {
+    const params = new URLSearchParams();
+    if (city) params.append('city', city);
+    if (category) params.append('category', category);
+    if (keyword) params.append('keyword', keyword);
+    navigate(`/listing?${params.toString()}`);
+  };
   return (
     <div id="Post">
       <img src="pics/post2.png" width={1519} height={700} id='imgss' alt="" />
@@ -34,7 +54,9 @@ const HomePage = () => {
             }}
             className='browsad'
           >
+            <Link id='b' to='/listing'>
             Browse Ads
+            </Link>
           </button>
           <button
             style={{
@@ -49,6 +71,7 @@ const HomePage = () => {
               fontSize: 'x-large',
             }}
             className='postad'
+            onClick={handlePostAdClick}
           >
             Post an Ad
           </button>
@@ -56,6 +79,8 @@ const HomePage = () => {
         <div id="searchbar">
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <select
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
               className="form-select"
               style={{
                 color: '#E31616',
@@ -75,6 +100,8 @@ const HomePage = () => {
               <option value="Fes">Fès</option>
             </select>
             <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
               className="form-select"
               style={{
                 color: '#E31616',
@@ -91,9 +118,17 @@ const HomePage = () => {
             >
               <option value="">Select a Category</option>
               <option value="Multimedia">Multimedia</option>
-              <option value="Other">Other</option>
+              <option value="Household Appliances">Household Appliances</option>
+              <option value="Sport">Sport</option>
+              <option value="Pets">Pets</option>
+              <option value="Home And Garden">Home And Garden</option>
+              <option value="Clothes">Clothes</option>
+              <option value="Work And Study">Work And Study</option>
+              <option value="Vehicles">Vehicles</option>
             </select>
             <input
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
               type="text"
               className="form-control"
               style={{
@@ -122,15 +157,15 @@ const HomePage = () => {
                 border: 'none',
                 fontSize: 'larger',
               }}
+              type="submit"
+              onClick={handleSearch}
             >
               Search
             </button>
           </div>
           <div style={{ display: 'flex', marginTop: '20px' }}>
             <h4 style={{ color: 'rgba(56, 50, 50, 0.758)' }}>Trending Keywords:</h4>
-            <h6 style={{ marginTop: '8px', marginLeft: '20px', wordSpacing: '30px', color: 'rgba(56, 50, 50, 0.758)' }}>
-              Camera Mobile Dress Table Pant ...
-            </h6>
+            <h6 style={{ marginTop: '8px', marginLeft: '20px', wordSpacing: '30px', color: 'rgba(56, 50, 50, 0.758)' }}>Camera Mobile Dress Table Pant ...</h6>
           </div>
         </div>
       </div>
@@ -217,10 +252,10 @@ const HomePage = () => {
           </button>
         </div>
         <div className="card-container">
-          {cards.map((product) => (
-            <div className="card" style={{backgroundColor:'#FFF3F3'}}>
+          {cards.map((product,index) => (
+            <div className="card" style={{backgroundColor:'#FFF3F3'}} key={index}>
               <img src={product.image} alt={product.title}  id="img"/>
-              <h5 id='h5'>{product.contenu}</h5>
+              <Link to={`/details/${product.id}`} id='lk'><h5 id='h5'>{product.contenu}</h5></Link>
               <img src="images/Heart.png" alt="Favorite" width="25px" style={{position:"absolute", left: '87%', top: '56%'}}/>
               <img src="images/MapPinLine.png" alt="Location" width="13%" height="10%" id="map"/>
               <span style={{color: '#929292', position: 'absolute', top: '77%',left: '16%'}}>{product.location}</span>
@@ -243,7 +278,7 @@ const HomePage = () => {
           {[...cards,...cards].map((product,index) => (
             <div className="card c" style={{backgroundColor:'#FFF3F3'}} key={index}>
               <img src={product.image} alt={product.contenu}  id="img"/>
-              <h5 id='h5'>{product.contenu}</h5>
+              <Link to={`/details/${product.id}`} id='lk'><h5 id='h5'>{product.contenu}</h5></Link>
               <img src="images/Heart.png" alt="Favorite" width="25px" style={{position:"absolute", left: '87%', top: '56%'}}/>
               <img src="images/MapPinLine.png" alt="Location" width="13%" height="10%" id="map"/>
               <span style={{color: '#929292', position: 'absolute', top: '77%',left: '16%'}}>{product.location}</span>

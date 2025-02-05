@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link ,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../authActions';
 import './Nav.css';
@@ -8,12 +8,22 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export default function Nav() {
   const dispatch = useDispatch();
-  const { token } = useSelector((state) => state.auth);
+  const { token, adminToken } = useSelector((state) => state.auth);
   const navigate = useNavigate();
+
+  // Combine both authentication states
+  const isAuthenticated = token || adminToken;
 
   const handleLogout = () => {
     dispatch(logoutUser());
     navigate('/');
+  };
+
+  const handlePostAdClick = (e) => {
+    if (!token) {
+      e.preventDefault();
+      navigate('/login');
+    }
   };
 
   return (
@@ -45,35 +55,43 @@ export default function Nav() {
               <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/contact">Contact Us</Link>
             </li>
             
-            {token ? (
-              <li className="nav-item">
-                <button 
-                  onClick={handleLogout}
-                  className="nav-link" 
-                  style={{ 
-                    color: "#F8E8DA", 
-                    width: "max-content", 
-                    fontSize: "22px",
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Logout
-                </button>
-              </li>
-            ) : (
-              <>
-                <li className="nav-item">
-                  <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/login">Login</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/signup">Sign up</Link>
-                </li>
-              </>
-            )}
+            {isAuthenticated ? (
+    <li className="nav-item">
+      <button 
+        onClick={handleLogout}
+        className="nav-link" 
+        style={{ 
+          color: "#F8E8DA", 
+          width: "max-content", 
+          fontSize: "22px",
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer'
+        }}
+      >
+        Logout
+      </button>
+    </li>
+  ) : (
+    <>
+      <li className="nav-item">
+        <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/login">Login</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/signup">Sign up</Link>
+      </li>
+    </>
+  )}
             <li className="nav-item">
-              <Link className="nav-link" id="b11" style={{ color: "#F8E8DA", width: "80%", fontSize: "22px" }} to="/post-ad">Post Ads</Link>
+              <Link 
+                className="nav-link" 
+                id="b11" 
+                style={{ color: "#F8E8DA", width: "80%", fontSize: "22px" }} 
+                to="/post-ad"
+                onClick={handlePostAdClick}
+              >
+                Post Ads
+              </Link>
             </li>
           </ul>
         </div>

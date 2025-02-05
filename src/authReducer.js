@@ -1,13 +1,12 @@
 const initialState = {
-    loading: false,
-    error: null,
-    token: null,
-    user: null,
-    adminToken: null,
-    adminLoading: false,
-    adminError: null
-  };
-  
+  loading: false,
+  error: null,
+  token: localStorage.getItem('userToken') || null,
+  user: null,
+  adminToken: localStorage.getItem('adminToken') || sessionStorage.getItem('adminToken') || null,
+  adminLoading: false,
+  adminError: null
+};
   export const authReducer = (state = initialState, action) => {
     switch (action.type) {
       case 'AUTH_REQUEST':
@@ -32,8 +31,12 @@ const initialState = {
         return { ...state, loading: false, error: action.payload };
       case 'ADMIN_LOGIN_FAILURE':
         return { ...state, adminLoading: false, adminError: action.payload };
-      case 'LOGOUT':
-        return initialState;
+        case 'LOGOUT':
+          return {
+            ...initialState,
+            token: null,
+            adminToken: null
+          };
       default:
         return state;
     }

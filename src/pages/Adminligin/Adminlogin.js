@@ -9,6 +9,7 @@ export default function Adminlogin() {
     email: '',
     password: ''
   });
+  const [rememberMe, setRememberMe] = useState(false);
   
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function Adminlogin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(adminLogin(credentials));
+    dispatch(adminLogin({ ...credentials, rememberMe }));
   };
 
   const handleChange = (e) => {
@@ -85,11 +86,37 @@ export default function Adminlogin() {
             />
           </div>
 
+          {/* Remember Me Checkbox */}
+          <div style={{ margin: '5px 20px',width:'30%', display: 'flex', alignItems: 'center' }} id='renm'>
+            <input
+              type="checkbox"
+              id="rememberMe"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+              style={{ 
+                marginRight: '10px',
+                width: '18px',
+                height: '18px',
+                accentColor: '#FA5252'
+              }}
+            />
+            <label 
+              htmlFor="rememberMe"
+              style={{
+                color: '#020053',
+                fontFamily: 'Abhaya Libre SemiBold',
+                cursor: 'pointer'
+              }}
+            >
+              Remember Me
+            </label>
+          </div>
+
           {adminError && (
             <div style={{ 
               color: '#FA5252', 
               textAlign: 'left', 
-              margin: '0px 20px',
+              margin: '-5px 20px',
               fontFamily: 'Abhaya Libre SemiBold'
             }}>
               {adminError}

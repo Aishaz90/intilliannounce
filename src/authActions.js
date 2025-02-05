@@ -24,13 +24,21 @@ export const loginUser = (credentials) => async (dispatch) => {
     try {
       dispatch({ type: 'ADMIN_LOGIN_REQUEST' });
       
-      // Simulated admin verification
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
       if (credentials.email === 'admin@gmail.com' && credentials.password === 'admin123') {
+        const adminToken = 'admin-mock-token';
+        
+        // Store token based on Remember Me choice
+        if (credentials.rememberMe) {
+          localStorage.setItem('adminToken', adminToken);
+        } else {
+          sessionStorage.setItem('adminToken', adminToken);
+        }
+        
         dispatch({
           type: 'ADMIN_LOGIN_SUCCESS',
-          payload: { adminToken: 'admin-mock-token' }
+          payload: { adminToken }
         });
       } else {
         throw new Error('Invalid admin credentials');
@@ -67,5 +75,10 @@ export const loginUser = (credentials) => async (dispatch) => {
   };
   
   export const logoutUser = () => (dispatch) => {
+    // Clear all authentication storage
+    localStorage.removeItem('userToken');
+    localStorage.removeItem('userData');
+    localStorage.removeItem('adminToken');
+    sessionStorage.removeItem('adminToken');
     dispatch({ type: 'LOGOUT' });
   };

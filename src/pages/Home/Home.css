@@ -153,7 +153,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
+#b{
+  text-decoration: none;
+  color: #FFF3F3;
+}
 .feature-item {
   display: flex;
   border-radius: 50px;
