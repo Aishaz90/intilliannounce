@@ -65,7 +65,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <img src="pics/footer.png" id='imgfooter' alt="" />
+      <img src={`${process.env.PUBLIC_URL}/pics/footer.png`} id='imgfooter' alt="" />
     </footer>
   );
 };

@@ -1,0 +1,532 @@
+[
+    {
+      "id": 1,
+      "img": { "src": "../images/dogs.png", "alt": "Dog Bed" },
+      "scrollImages": [
+        { "src": "../images/dog_bed1.jpg", "alt": "Side view" },
+        { "src": "../images/dog_bed2.jpg", "alt": "Top view" },
+        { "src": "../images/dog_bed3.jpg", "alt": "Washable cover" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 10:00 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "2,345 views" },
+        "description": "Orthopedic memory foam bed with waterproof liner and removable cover",
+        "price": "400DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Size", "value": "100x80cm" },
+        { "label": "Material", "value": "Memory Foam" },
+        { "label": "Weight Capacity", "value": "50kg" },
+        { "label": "Color", "value": "Charcoal Grey" }
+      ],
+      "description": "Veterinary-approved orthopedic support for joint health. Waterproof inner liner protects against accidents while machine-washable cover ensures easy cleaning with anti-slip bottom. Specifically designed for medium to large breed dogs, providing optimal comfort and durability."
+    },
+    {
+      "id": 2,
+      "img": { "src": "../images/talon1.jpg", "alt": "Louboutin Heels" },
+      "scrollImages": [
+        { "src": "../images/talon2.jpg", "alt": "Side profile" },
+        { "src": "../images/talon3.jpg", "alt": "Red sole detail" },
+        { "src": "../images/talon4.jpg", "alt": "Box packaging" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 11:30 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "4,567 views" },
+        "description": "Christian Louboutin So Kate 120mm Patent Red Pumps",
+        "price": "1400DH",
+        "negotiable": "No"
+      },
+      "features": [
+        { "label": "Size", "value": "EU 38" },
+        { "label": "Heel Height", "value": "12cm" },
+        { "label": "Condition", "value": "New in Box" },
+        { "label": "Authentication", "value": "Certificate Included" }
+      ],
+      "description": "Featuring the iconic red lacquered sole and sharp pointed toe, these premium patent leather pumps are crafted in Italy. Includes original dust bag and box, maintained in pristine store-quality condition with no signs of wear."
+    },
+    {
+      "id": 3,
+      "img": { "src": "../images/notbok.jpg", "alt": "Notebook" },
+      "scrollImages": [
+        { "src": "../images/notebook2.jpg", "alt": "Open pages" },
+        { "src": "../images/notebook3.jpg", "alt": "Color variants" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 09:15 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "1,234 views" },
+        "description": "Premium A5 Dotted Journal with 120gsm Thick Paper",
+        "price": "60DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Pages", "value": "192 numbered" },
+        { "label": "Paper Type", "value": "Bleed-resistant" },
+        { "label": "Bookmarks", "value": "3 ribbons" },
+        { "label": "Cover", "value": "Hardcover" }
+      ],
+      "description": "Perfect for bullet journaling and light watercolor work, this lay-flat notebook features elastic closure and acid-free paper that resists yellowing. Includes 8 colored index tabs, sticker sheets, and three ribbon markers for multi-category organization."
+    },
+    {
+      "id": 4,
+      "img": { "src": "../images/pcSamsung.jpg", "alt": "Samsung Laptop" },
+      "scrollImages": [
+        { "src": "../images/pcSamsung2.jpg", "alt": "Keyboard detail" },
+        { "src": "../images/pcSamsung3.jpg", "alt": "Side ports" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 03:00 pm",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "6,789 views" },
+        "description": "Samsung Galaxy Book2 Pro 360 13.3\" AMOLED 2-in-1 Laptop",
+        "price": "6000DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Processor", "value": "Intel i7-1260P" },
+        { "label": "RAM", "value": "16GB LPDDR5" },
+        { "label": "Storage", "value": "1TB NVMe SSD" },
+        { "label": "Battery", "value": "20 hours" }
+      ],
+      "description": "This premium convertible features a stunning QHD+ AMOLED touchscreen with included S-Pen for precise input. Offers Thunderbolt 4 connectivity and military-grade durability, complete with original charger and protective sleeve for mobile professionals."
+    },
+    {
+      "id": 5,
+      "img": { "src": "../images/cupra.jpg", "alt": "Cupra Car" },
+      "scrollImages": [
+        { "src": "../images/cupra2.jpg", "alt": "Interior" },
+        { "src": "../images/cupra3.jpg", "alt": "Dashboard" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 10:45 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "15,678 views" },
+        "description": "2023 Cupra Formentor VZ5 2.5 TSI 4Drive DSG",
+        "price": "750000DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Mileage", "value": "8,200 km" },
+        { "label": "Engine", "value": "2.5L Turbo" },
+        { "label": "Power", "value": "390 PS" },
+        { "label": "Color", "value": "Graphene Grey" }
+      ],
+      "description": "This performance SUV boasts full LED matrix headlights with dynamic indicators and premium Nappa leather sports seats. Comes with remaining 5-year manufacturer warranty and complete service history from authorized dealers."
+    },
+    {
+      "id": 6,
+      "img": { "src": "../images/Rectangle113.png", "alt": "Washing Machine" },
+      "scrollImages": [
+        { "src": "../images/washing2.jpg", "alt": "Control panel" },
+        { "src": "../images/washing3.jpg", "alt": "Interior drum" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 02:30 pm",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "3,456 views" },
+        "description": "Samsung 11kg Front Load Washer with AI Control",
+        "price": "5000DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Capacity", "value": "11kg" },
+        { "label": "Energy Class", "value": "A+++" },
+        { "label": "Programs", "value": "21" },
+        { "label": "Noise Level", "value": "47 dB" }
+      ],
+      "description": "Features EcoBubble technology for effective cold water washing and a digital inverter motor with 20-year warranty. Includes SmartThings app integration for AI-powered cycle optimization and complete installation kit."
+    },
+    {
+      "id": 7,
+      "img": { "src": "../images/sport.jpg", "alt": "Ab Wheel" },
+      "scrollImages": [
+        { "src": "../images/sport2.jpg", "alt": "Packaged" },
+        { "src": "../images/sport3.jpg", "alt": "In use" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 08:15 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "1,890 views" },
+        "description": "5-in-1 Abdominal Wheel with Knee Pad and Resistance Bands",
+        "price": "1400DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Material", "value": "TPR + NBR" },
+        { "label": "Max Weight", "value": "150kg" },
+        { "label": "Dimensions", "value": "34x15cm" },
+        { "label": "Color", "value": "Black/Red" }
+      ],
+      "description": "This multifunctional fitness tool features ergonomic dual handles with anti-slip texture and an LCD display tracking reps/calories. Includes workout guide, nutrition plan, and folds compactly for easy storage."
+    },
+    {
+      "id": 8,
+      "img": { "src": "../images/yamaha.png", "alt": "Yamaha Bike" },
+      "scrollImages": [
+        { "src": "../images/yamaha2.jpg", "alt": "Side view" },
+        { "src": "../images/yamaha3.jpg", "alt": "Engine detail" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 04:20 pm",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "9,876 views" },
+        "description": "2022 Yamaha YZF-R6 600cc Sport Bike",
+        "price": "800000DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Mileage", "value": "4,500 km" },
+        { "label": "Engine", "value": "599cc" },
+        { "label": "Power", "value": "118 HP" },
+        { "label": "Color", "value": "Race Blue" }
+      ],
+      "description": "Track-ready sport bike featuring full LED lighting with daytime running lights and race-tuned suspension. Includes quick shifter, slipper clutch, OEM stand, and protective cover."
+    },
+    {
+      "id": 9,
+      "img": { "src": "../images/jacket.jpg", "alt": "Leather Jacket" },
+      "scrollImages": [
+        { "src": "../images/jacket2.jpg", "alt": "Back view" },
+        { "src": "../images/jacket3.jpg", "alt": "Label detail" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 01:45 pm",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "2,109 views" },
+        "description": "Genuine Leather Biker Jacket with Quilted Lining",
+        "price": "800DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Size", "value": "L" },
+        { "label": "Material", "value": "Full-grain leather" },
+        { "label": "Pockets", "value": "6" },
+        { "label": "Closure", "value": "Zipper + Snap" }
+      ],
+      "description": "Crafted from premium full-grain leather with YKK zippers and storm flap protection. Features removable thermal lining and CE-approved armor pockets, handcrafted in Turkey with 2-year warranty."
+    },
+    {
+      "id": 10,
+      "img": { "src": "../images/dogs1.jpg", "alt": "Pet Gloves" },
+      "scrollImages": [
+        { "src": "../images/petglove2.jpg", "alt": "On hand" },
+        { "src": "../images/petglove3.jpg", "alt": "Packaging" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 07:30 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "987 views" },
+        "description": "Silicone Pet Grooming Gloves - Pair",
+        "price": "200DH",
+        "negotiable": "No"
+      },
+      "features": [
+        { "label": "Size", "value": "Universal" },
+        { "label": "Material", "value": "Food-grade silicone" },
+        { "label": "Colors", "value": "Blue/Pink" },
+        { "label": "Washable", "value": "Yes" }
+      ],
+      "description": "Gentle silicone massage nubs promote healthy coat circulation, suitable for bath-time use with waterproof design. Features adjustable strap for all hand sizes and dishwasher-safe construction."
+    },
+    {
+      "id": 11,
+      "img": { "src": "../images/children.png", "alt": "Nursery Decor" },
+      "scrollImages": [
+        { "src": "../images/nursery2.jpg", "alt": "Wall detail" },
+        { "src": "../images/nursery3.jpg", "alt": "Accessories" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 06:00 pm",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "1,543 views" },
+        "description": "Handmade Nursery Decor Set - Wall Art + Mobile",
+        "price": "100DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Material", "value": "Felt + Wood" },
+        { "label": "Theme", "value": "Woodland Animals" },
+        { "label": "Items", "value": "5-piece set" },
+        { "label": "Safety", "value": "Non-toxic" }
+      ],
+      "description": "Charming woodland-themed set featuring hand-stitched felt designs on birch wood. Includes cloud-shaped shelf, hanging mobile, and easy-install hardware with custom color options available."
+    },
+    {
+      "id": 12,
+      "img": { "src": "../images/plants1.jpg", "alt": "Decorative Plant" },
+      "scrollImages": [
+        { "src": "../images/plant2.jpg", "alt": "Close-up" },
+        { "src": "../images/plant3.jpg", "alt": "In room" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 12:15 pm",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "2,432 views" },
+        "description": "Modern Metallic Geometric Plant Stand",
+        "price": "800DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Height", "value": "120cm" },
+        { "label": "Material", "value": "Iron + Brass" },
+        { "label": "Pot Included", "value": "No" },
+        { "label": "Assembly", "value": "Required" }
+      ],
+      "description": "Mid-century modern plant stand combining iron and brass accents. Supports plants up to 15kg with protective rubber floor pads and weather-resistant powder coating."
+    },
+    {
+      "id": 13,
+      "img": { "src": "../images/clavie.jpg", "alt": "Mechanical Keyboard" },
+      "scrollImages": [
+        { "src": "../images/keyboard2.jpg", "alt": "RGB lighting" },
+        { "src": "../images/keyboard3.jpg", "alt": "Keycaps" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 09:45 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "3,210 views" },
+        "description": "Customizable RGB Mechanical Keyboard - K66 Pro",
+        "price": "760DH",
+        "negotiable": "No"
+      },
+      "features": [
+        { "label": "Switches", "value": "Gateron Red" },
+        { "label": "Layout", "value": "65%" },
+        { "label": "Backlight", "value": "16.8M Colors" },
+        { "label": "Connectivity", "value": "USB-C" }
+      ],
+      "description": "Hot-swappable mechanical keyboard featuring PBT double-shot keycaps and programmable RGB lighting. Built with aluminum alloy frame and USB-C connectivity for gaming/typing enthusiasts."
+    },
+    {
+      "id": 14,
+      "img": { "src": "../images/blue.jpg", "alt": "Wireless Headphones" },
+      "scrollImages": [
+        { "src": "../images/headphones2.jpg", "alt": "Case" },
+        { "src": "../images/headphones3.jpg", "alt": "Charging" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 10:30 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "5,678 views" },
+        "description": "Beats Solo 4 Wireless Noise Cancelling Headphones",
+        "price": "200DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Battery", "value": "40hrs" },
+        { "label": "Bluetooth", "value": "5.3" },
+        { "label": "Color", "value": "Slate Blue" },
+        { "label": "ANC", "value": "Yes" }
+      ],
+      "description": "Premium wireless headphones with Apple H1 chip for seamless pairing. Features Fast Fuel charging, leatherette ear cushions, and includes carrying case with charging cables."
+    },
+    {
+      "id": 15,
+      "img": { "src": "../images/dvd.png", "alt": "DVD Player" },
+      "scrollImages": [
+        { "src": "../images/dvd2.jpg", "alt": "Screen open" },
+        { "src": "../images/dvd3.jpg", "alt": "Remote" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 11:15 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "876 views" },
+        "description": "Portable 10.1\" DVD Player with Car Headrest Mount",
+        "price": "200DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Screen", "value": "10.1\" HD" },
+        { "label": "Formats", "value": "DVD/CD/MP4" },
+        { "label": "Battery", "value": "5hrs" },
+        { "label": "Outputs", "value": "AV/HDMI" }
+      ],
+      "description": "Portable entertainment system featuring built-in stereo speakers and region-free playback. Includes car charger, home adapter, and parental controls with adjustable screen angles."
+    },
+    {
+      "id": 16,
+      "img": { "src": "../images/powerbank.jpg", "alt": "Wireless Charger" },
+      "scrollImages": [
+        { "src": "../images/charger2.jpg", "alt": "Multiple devices" },
+        { "src": "../images/charger3.jpg", "alt": "LED display" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 02:00 pm",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "4,321 views" },
+        "description": "20,000mAh Magnetic Wireless Power Bank",
+        "price": "600DH",
+        "negotiable": "No"
+      },
+      "features": [
+        { "label": "Capacity", "value": "20,000mAh" },
+        { "label": "Output", "value": "25W PD" },
+        { "label": "Charging", "value": "Qi + Wired" },
+        { "label": "Devices", "value": "4 Simultaneous" }
+      ],
+      "description": "High-capacity power bank with built-in stand and digital display. Features TSA-approved design, simultaneous charging for 4 devices, and includes USB-C/Lightning cables."
+    },
+    {
+      "id": 17,
+      "img": { "src": "../images/drone.jpg", "alt": "Drone Camera" },
+      "scrollImages": [
+        { "src": "../images/drone2.jpg", "alt": "Remote control" },
+        { "src": "../images/drone3.jpg", "alt": "Carrying case" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 03:45 pm",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "7,654 views" },
+        "description": "4K GPS Drone with 3-Axis Gimbal and Follow Me",
+        "price": "3000DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Camera", "value": "4K/60fps" },
+        { "label": "Flight Time", "value": "34 mins" },
+        { "label": "Range", "value": "8km" },
+        { "label": "Sensors", "value": "Obstacle Avoidance" }
+      ],
+      "description": "Professional-grade drone featuring 360° obstacle avoidance and automated MasterShots cinematic modes. Includes 3 batteries, charging hub, and beginner-friendly auto return home function."
+    },
+    {
+      "id": 18,
+      "img": { "src": "../images/iphone15.png", "alt": "iPhone 15" },
+      "scrollImages": [
+        { "src": "../images/iphone2.jpg", "alt": "Back view" },
+        { "src": "../images/iphone3.jpg", "alt": "Box contents" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 09:00 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "12,345 views" },
+        "description": "Apple iPhone 15 128GB Dual SIM - Midnight Black",
+        "price": "7000DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Storage", "value": "128GB" },
+        { "label": "Camera", "value": "48MP Main" },
+        { "label": "Chip", "value": "A16 Bionic" },
+        { "label": "Condition", "value": "Unopened" }
+      ],
+      "description": "Brand new iPhone 15 with Dynamic Island feature and Ceramic Shield protection. Includes USB-C charging adapter and full 1-year Apple warranty in sealed original packaging."
+    },
+    {
+      "id": 19,
+      "img": { "src": "../images/JBL.png", "alt": "Bluetooth Speaker" },
+      "scrollImages": [
+        { "src": "../images/jbl2.jpg", "alt": "Waterproof" },
+        { "src": "../images/jbl3.jpg", "alt": "Pairing" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 04:15 pm",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "2,109 views" },
+        "description": "JBL Charge 5 Portable Waterproof Speaker",
+        "price": "760DH",
+        "negotiable": "No"
+      },
+      "features": [
+        { "label": "Power", "value": "40W RMS" },
+        { "label": "Battery", "value": "20hrs" },
+        { "label": "Waterproof", "value": "IP67" },
+        { "label": "Colors", "value": "Squad" }
+      ],
+      "description": "Rugged portable speaker with PartyBoost for multi-device pairing. Features built-in powerbank functionality and includes carrying strap with quick charger."
+    },
+    {
+      "id": 20,
+      "img": { "src": "../images/adaptatteur.png", "alt": "Multi-port Adapter" },
+      "scrollImages": [
+        { "src": "../images/adapter2.jpg", "alt": "Ports detail" },
+        { "src": "../images/adapter3.jpg", "alt": "In use" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 01:00 pm",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "1,543 views" },
+        "description": "8-in-1 USB-C Hub with 4K HDMI and Ethernet",
+        "price": "300DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Ports", "value": "HDMI/USB/SD" },
+        { "label": "Power", "value": "100W PD" },
+        { "label": "Compatibility", "value": "Mac/Windows" },
+        { "label": "Cable", "value": "20cm" }
+      ],
+      "description": "Compact aluminum hub supporting dual 4K displays and Gigabit Ethernet. Features 100W power delivery and heat-dissipating design for stable performance during extended use."
+    },
+    {
+      "id": 21,
+      "img": { "src": "../images/canon2.jpg", "alt": "Camera" },
+      "scrollImages": [
+        { "src": "../images/canon3.jpg", "alt": "Lens attached" },
+        { "src": "../images/canon4.jpg", "alt": "Accessories" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 10:00 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "5,432 views" },
+        "description": "Canon EOS M50 Mark II Mirrorless Camera Kit",
+        "price": "2500DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Sensor", "value": "24.1MP APS-C" },
+        { "label": "Lens", "value": "15-45mm" },
+        { "label": "Video", "value": "4K/24p" },
+        { "label": "Condition", "value": "Like New" }
+      ],
+      "description": "Versatile mirrorless camera with Dual Pixel CMOS AF and vari-angle touchscreen. Includes UV filter, cleaning kit, and has less than 5,000 shutter count for near-new condition."
+    },
+    {
+      "id": 22,
+      "img": { "src": "../images/charge.png", "alt": "Charger Cable" },
+      "scrollImages": [
+        { "src": "../images/cable2.jpg", "alt": "Packaging" },
+        { "src": "../images/cable3.jpg", "alt": "Length" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 08:45 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "876 views" },
+        "description": "MFi Certified Lightning to USB-C Fast Charging Cable",
+        "price": "100DH",
+        "negotiable": "No"
+      },
+      "features": [
+        { "label": "Length", "value": "2m" },
+        { "label": "Wattage", "value": "20W" },
+        { "label": "Compatibility", "value": "iPhone/iPad" },
+        { "label": "Warranty", "value": "1 year" }
+      ],
+      "description": "Durable nylon-braided cable with MFi certification for safe fast charging. Features over-current protection and includes convenient organizer clip for tangle-free storage."
+    },
+    {
+      "id": 23,
+      "img": { "src": "../images/souris.png", "alt": "Wireless Mouse" },
+      "scrollImages": [
+        { "src": "../images/mouse2.jpg", "alt": "Underside" },
+        { "src": "../images/mouse3.jpg", "alt": "Receiver" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 11:30 am",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "1,234 views" },
+        "description": "HP 220 Silent Wireless Mouse - Black",
+        "price": "60DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "DPI", "value": "1600" },
+        { "label": "Battery", "value": "12 months" },
+        { "label": "Connectivity", "value": "2.4GHz" },
+        { "label": "Buttons", "value": "6" }
+      ],
+      "description": "Quiet-click mouse with 90% noise reduction and ergonomic rubber grips. Features nano receiver storage in mouse body and auto-sleep mode for extended battery life."
+    },
+    {
+      "id": 24,
+      "img": { "src": "../images/PcAcer.jpg", "alt": "Acer Chromebook" },
+      "scrollImages": [
+        { "src": "../images/acer2.jpg", "alt": "Keyboard" },
+        { "src": "../images/acer3.jpg", "alt": "Ports" }
+      ],
+      "text": {
+        "date": "25 Jun 2024 03:30 pm",
+        "views": { "src": "../images/Eye.png", "alt": "Views", "count": "3,210 views" },
+        "description": "Acer Chromebook Spin 311 Convertible Touchscreen",
+        "price": "3000DH",
+        "negotiable": "Yes"
+      },
+      "features": [
+        { "label": "Screen", "value": "11.6\" HD" },
+        { "label": "Processor", "value": "MediaTek MT8183" },
+        { "label": "RAM", "value": "4GB" },
+        { "label": "Storage", "value": "64GB" }
+      ],
+      "description": "Durable convertible Chromebook with military-grade construction and USI stylus support. Includes protective sleeve and wireless mouse, running Chrome OS with full Play Store access."
+    }
+  ]

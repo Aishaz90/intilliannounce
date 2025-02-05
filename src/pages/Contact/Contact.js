@@ -3,8 +3,31 @@ import './Contact.css';
 import { Link } from 'react-router-dom';
 import Nav from '../../Nav/Nav';
 import Footer from '../../Nav/Footer';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function Contact() {
+  const iconStyle = {
+    position: 'absolute',
+    left: '15px',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    color: '#888',
+    fontSize: '1.2rem'
+  };
+  
+  const inputStyle = {
+    width: '100%',
+    height: '50px',
+    paddingLeft: '40px', // Adds space so text doesn't overlap with icon
+  };
+  
+  const textareaStyle = {
+    width: '100%',
+    height: '150px',
+    paddingLeft: '40px',
+    paddingTop: '7px',
+  };
+  
   return (
     <div>
       <div className='post'>
@@ -37,13 +60,50 @@ export default function Contact() {
             <div className="divside"></div>
             <h4 style={{ color: '#020053', fontFamily: 'Abhaya Libre SemiBold', fontWeight: 'bold', marginTop: '3%', marginLeft: '2%' }}>Send Message to Us</h4>
           </div>
-          <form style={{ padding: '20px' }}>
-            <input type="text" placeholder="Enter your name ..." className="form-control" style={{ display: 'inline-block', width: '48%', height: '50px', background: 'url(pics/p/User.png) no-repeat 10px 50%' }} />
-            <input type="text" placeholder="Enter your Mail Address ..." className="form-control" style={{ width: '48%', display: 'inline-block', marginLeft: '2.5%', height: '50px', background: 'url(pics/p/Vector-1.png) no-repeat 10px 50%' }} />
-            <input type="text" placeholder="Subject" style={{ display: 'block', width: '100%', height: '50px', background: 'url(pics/p/Vector-2.png) no-repeat 20px 50%' }} className="form-control mt-3" />
-            <textarea name="msg" placeholder="Type your Message ..." className="form-control w-100 mt-3" style={{ height: '300px', background: 'url(pics/p/Vector.png) no-repeat 10px 5%' }}></textarea>
-            <input type="submit" value="Send" className="b1" style={{marginTop: '50px', fontWeight: 'bolder', fontFamily: 'Abhaya Libre SemiBold' }} />
-          </form>
+          <form style={{ padding: '20px', position: 'relative' }}>
+  <div style={{ position: 'relative', display: 'inline-block', width: '48%' }}>
+    <i className="fa fa-user" style={iconStyle}></i>
+    <input 
+      type="text" 
+      placeholder="Enter your name ..." 
+      className="form-control"
+      style={inputStyle} 
+    />
+  </div>
+
+  <div style={{ position: 'relative', display: 'inline-block', width: '48%', marginLeft: '2.5%' }}>
+    <i className="fa fa-envelope" style={iconStyle}></i>
+    <input 
+      type="text" 
+      placeholder="Enter your Mail Address ..." 
+      className="form-control" 
+      style={inputStyle} 
+    />
+  </div>
+
+  <div style={{ position: 'relative', width: '100%', marginTop: '20px' }}>
+    <i className="fa fa-tag" style={iconStyle}></i>
+    <input 
+      type="text" 
+      placeholder="Subject" 
+      className="form-control" 
+      style={inputStyle} 
+    />
+  </div>
+
+  <div style={{ position: 'relative', width: '100%', marginTop: '20px' }}>
+    <i className="fa fa-comment" style={{ ...iconStyle, top: '20px' }}></i>
+    <textarea 
+      name="msg" 
+      placeholder="Type your Message ..." 
+      className="form-control w-100 mt-3" 
+      style={textareaStyle} 
+    ></textarea>
+  </div>
+
+  <input type="submit" value="Send" className="b1" style={{ marginTop: '50px', fontWeight: 'bolder', fontFamily: 'Abhaya Libre SemiBold' }} />
+</form>
+
         </div>
         
         <div>

@@ -9,7 +9,6 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000;
   }
   .navbar ul {
     display: flex;
@@ -28,7 +27,18 @@
     font-size: 24px;
     cursor: pointer;
   }
-  
+  #b11{
+    width:80%;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #E31616;
+    color: #F8E8DA;
+    margin-right: 100px;
+    text-align: center;
+    font-family: Abhaya Libre SemiBold;
+    border: none;
+    font-size: larger;
+  }
   /* Responsive Design */
   @media (max-width: 100px) {
     .navbar ul {
@@ -56,18 +66,7 @@
       display: block;
     }
   }
-  #b11{
-    width:10%;
-    padding: 10px;
-    border-radius: 25px;
-    background-color: #E31616;
-    color: #F8E8DA;
-    margin-right: 100px;
-    text-align: center;
-    font-family: Abhaya Libre SemiBold;
-    border: none;
-    font-size: larger;
-  }
+ 
   @media screen and (max-width:1280px){
     .navbar ul li {
       text-align: center;

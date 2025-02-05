@@ -52,6 +52,9 @@
     font-size: 22px;
     margin-top: 83%;
 }
+#lk{
+    text-decoration: none;
+}
 .map{
     position: absolute;
     top:77%;

@@ -8,7 +8,7 @@ export default function Nav() {
     <nav className="navbar navbar-expand-sm">
       <div className="container-fluid" style={{ paddingInlineStart: "10px" }}>
         <Link className="navbar-brand" to="/">
-          <img src="pics/logoo.png" alt="Logo" />
+        <img src={`${process.env.PUBLIC_URL}/pics/logoo.png`} alt="Logo" />
         </Link>
         <button
           className="navbar-toggler"
@@ -46,4 +46,4 @@ export default function Nav() {
       </div>
     </nav>
   );
-}
+} 

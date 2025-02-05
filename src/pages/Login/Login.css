@@ -70,25 +70,36 @@
     top: 89.5%;
     left: 47%;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1280px){
+    .imge {
+        width: 80%;
+        height: 100vh;
+    }
     #formulaire {
         width: 40%;
         left: 75%;
-        top: 50%;
+        top: 45%;
         transform: translateX(-50%); /* Center horizontally */
-        height: 600px;
+        height: 500px;
     }
 
     #inputs input {
         width: 100%;
         padding: 10px;
     }
-
+    #or{
+        margin-top: 0%;
+    }
     #alinks {
         padding: 5px 40px;
         text-align: center;
     }
-
+    #hh2{
+        margin-top: 5%;
+    }
+    #bb{
+        margin-top: -9%;
+    }
     #sign {
         top: 93%;
         left: 43%;

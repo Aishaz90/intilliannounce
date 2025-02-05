@@ -12,6 +12,7 @@ import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Adminlogin from './pages/Adminligin/Adminlogin';
 import ConstCat from './pages/Multimedia/ConstCat';
+import Details from './pages/Details/Details';
 export default  function App() {
   const location = useLocation();
   useEffect(() => {
@@ -38,6 +39,7 @@ export default  function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />  
         <Route path="/adminlogin" element={<Adminlogin/>} /> 
+        <Route path="/details/:id" element={<Details />} />
       </Routes>
       {/* {location.pathname !== '/'&&location.pathname !== '/listing'&&location.pathname !== '/categories'&& location.pathname !== '/contact'&&location.pathname !== '/login'&&location.pathname !== '/signup'&&<Footer/>} */}
     </div>

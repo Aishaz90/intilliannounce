@@ -37,6 +37,7 @@ label {
     font-size: 14px;
     color: #fa5252;
     margin-left: 5%;
+    display: flex;
 }
 
 .terms label{
@@ -58,7 +59,7 @@ label {
     font-family: "Abhaya Libre SemiBold";
     cursor: pointer;
     margin-top: 10px;
-    margin-left: 4%;
+    margin-left: 3%;
 }
 
 .signup-btn:hover {
@@ -108,6 +109,16 @@ label {
 @media (max-width: 1280px) {
     #signup-form {
         width: 40%;
+    }
+    .input{
+        margin-top: -7%;
+    }
+    
+    #orr{
+        margin-top: -2%;
+    }
+    #ss{
+        margin-top: -5%;
     }
 }
 

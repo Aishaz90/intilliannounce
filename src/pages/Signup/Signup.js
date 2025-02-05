@@ -11,7 +11,7 @@ export default function Signup() {
         </Link>
         <div id="formulaire">
           <h2 id='hh2'>Sign Up</h2>
-         <div id="inputs">
+         <div id="inputs" className='input'>
           <label style={{ color: "#020053", fontFamily: "Abhaya Libre SemiBold" }}>
           Username
         </label>
@@ -75,10 +75,10 @@ export default function Signup() {
             color: '#fa5252',
           }}>Terms & Conditions</Link>
             </label>
+            <button className="signup-btn">Sign Up</button>
           </div>
-          <button className="signup-btn">Sign Up</button>
           <img src="images/or.png" alt="" id="orr" />
-          <div>
+          <div id='ss'>
             <div id="alinks">
               <Link
                 to=""

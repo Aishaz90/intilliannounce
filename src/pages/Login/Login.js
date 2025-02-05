@@ -49,6 +49,7 @@ export default function Login() {
               }}
             />
           </div>
+          <div id='bb'>
           <button
             to="#"
             style={{
@@ -67,6 +68,7 @@ export default function Login() {
           <Link to="#" style={{ color: '#FA5252' }} id="forget">
             Forget your password
           </Link>
+          </div>
           <img src="images/or.png" alt="" id="or" />
           <div>
             <Link
