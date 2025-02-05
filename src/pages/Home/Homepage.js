@@ -173,7 +173,7 @@ const HomePage = () => {
       <div id="cat">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <h1 style={{ color: '#020053', fontFamily: 'Abhaya Libre SemiBold', marginLeft: '5%' }}>Popular Categories</h1>
-          <button
+          <Link to='/categories' id='lk' style={{color:'#FFF3F3',}}><button
             style={{
               width: '200px',
               padding: '10px',
@@ -187,14 +187,14 @@ const HomePage = () => {
             }}
           >
             View All Categories
-          </button>
+          </button></Link>
         </div>
         <div  className="scroll">
           <div id='divcat1'
           style={{
             marginLeft: '1.5%',
           }}>
-            <img src="pics/multimedia.png" className='imgcat' width={200} alt="" />
+            <Link to='/Multimedia' id='lk' style={{color:'#FFF3F3',}}><img src="pics/multimedia.png" className='imgcat' width={200} alt="" /></Link>
           </div>
           <div
           id='divcat2'
@@ -202,28 +202,28 @@ const HomePage = () => {
               marginLeft: '1.5%',
             }}
           >
-            <img src="pics/clothes.png" className='imgcat' width={200} alt="" />
+            <Link to='/Clothes' id='lk' style={{color:'#FFF3F3',}}><img src="pics/clothes.png" className='imgcat' width={200} alt="" /></Link>
           </div>
           <div
             style={{
               marginLeft: '2%',
             }}
-          ><img src="pics/vehicles.png" className='imgcat' width={200} alt="" /></div>
+          ><Link to='/Vehicles' id='lk' style={{color:'#FFF3F3',}}><img src="pics/vehicles.png" className='imgcat' width={200} alt="" /></Link></div>
           <div
             style={{
               marginLeft: '2%',
             }}
-          ><img src="pics/sport.png" className='imgcat' width={200} alt="" /></div>
+          ><Link to='/Sport' id='lk' style={{color:'#FFF3F3',}}><img src="pics/sport.png" className='imgcat' width={200} alt="" /></Link></div>
           <div
             style={{
               marginLeft: '2%',
             }}
-          ><img src="pics/workandstudy.png" className='imgcat' width={200} alt="" /></div>
+          ><Link to='/Work And Study' id='lk' style={{color:'#FFF3F3',}}><img src="pics/workandstudy.png" className='imgcat' width={200} alt="" /></Link></div>
           <div
             style={{
               marginLeft: '2%',
             }}
-          ><img src="pics/Homeandgarden.png" className='imgcat' width={200} alt="" /></div>
+          ><Link to='/Home And Garden' id='lk' style={{color:'#FFF3F3',}}><img src="pics/Homeandgarden.png" className='imgcat' width={200} alt="" /></Link></div>
         </div>
       </div>
 
@@ -233,9 +233,7 @@ const HomePage = () => {
           <h1 style={{ color: '#020053', fontFamily: 'Abhaya Libre SemiBold', marginLeft: '5%' }}>
             Recently Published Ads
           </h1>
-          <button
-            style={{
-              width: 'max-content',
+          <Link to='/listing' id='lk' style={{color:'#FFF3F3',width: 'max-content',width: 'max-content',
               borderRadius: '25px',
               backgroundColor: '#E31616',
               color: '#F8E8DA',
@@ -245,11 +243,10 @@ const HomePage = () => {
               fontSize: 'larger',
               height: '50px',
               paddingLeft: '2%',
-              paddingRight: '2%',
-            }}
-          >
+              paddingTop:"0.7%",
+              paddingRight: '2%',}}>
             View All Ads
-          </button>
+          </Link>
         </div>
         <div className="card-container">
           {cards.map((product,index) => (
@@ -308,7 +305,6 @@ const HomePage = () => {
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
             </h3>
-            <h3 className="feature-link">Read More</h3>
           </div>
         </div>
 
@@ -322,7 +318,6 @@ const HomePage = () => {
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
             </h3>
-            <h3 className="feature-link">Read More</h3>
           </div>
         </div>
 
@@ -336,7 +331,6 @@ const HomePage = () => {
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
             </h3>
-            <h3 className="feature-link">Read More</h3>
           </div>
         </div>
       </div>
@@ -352,7 +346,6 @@ const HomePage = () => {
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
             </h3>
-            <h3 className="feature-link">Read More</h3>
           </div>
         </div>
 
@@ -366,7 +359,6 @@ const HomePage = () => {
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
             </h3>
-            <h3 className="feature-link">Read More</h3>
           </div>
         </div>
 
@@ -380,7 +372,6 @@ const HomePage = () => {
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
             </h3>
-            <h3 className="feature-link">Read More</h3>
           </div>
         </div>
       </div>
