@@ -104,7 +104,6 @@ label {
 .login-text a {
     color: #fa5252;
 }
-
 /* Responsive Design */
 @media (max-width: 1280px) {
     #signup-form {
@@ -113,12 +112,16 @@ label {
     .input{
         margin-top: -7%;
     }
-    
     #orr{
-        margin-top: -2%;
+        margin-top: 0%;
+        margin-bottom: 2%;
     }
     #ss{
         margin-top: -5%;
+    }
+    #formulaire{
+        height: 520px;
+        margin-top: -2%;
     }
 }
 

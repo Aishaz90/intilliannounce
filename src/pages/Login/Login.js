@@ -1,119 +1,162 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { loginUser } from '../../authActions';
 import './Login.css';
-import { Link } from 'react-router-dom';
 
 export default function Login() {
+  const [credentials, setCredentials] = useState({
+    email: '',
+    password: ''
+  });
+  
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { loading, error, token } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (token) {
+      navigate('/');
+    }
+  }, [token, navigate]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(loginUser(credentials));
+  };
+
+  const handleChange = (e) => {
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <div id="imgcont">
-      <img src="pics/login.png" className="imge" alt="" />
+      <img src="pics/login.png" className="imge" alt="Login background" />
       <div id="divup">
         <Link className="navbar-brand" to="/">
           <img src="pics/logoo.png" alt="Logo" />
         </Link>
-        <div id="formulaire">
+        <form id="formulaire" onSubmit={handleSubmit}>
           <h2 id='hh2'>Login</h2>
           <div id="inputs">
-            <label
-              htmlFor=""
-              style={{
-                color: '#020053',
-                fontFamily: 'Abhaya Libre SemiBold',
-              }}
-            >
-              User name or email address
+            <label htmlFor="email" style={{ color: "#020053", fontFamily: "Abhaya Libre SemiBold" }}>
+              Email address
             </label>
             <input
-              type="text"
+              type="email"
+              name="email"
               className="form-control"
+              value={credentials.email}
+              onChange={handleChange}
+              required
               style={{
                 backgroundColor: '#FFF3F3',
                 border: '1px solid #020053',
                 marginBottom: '5px',
               }}
             />
-            <label
-              htmlFor=""
-              style={{
-                color: '#020053',
-                fontFamily: 'Abhaya Libre SemiBold',
-              }}
-            >
+
+            <label htmlFor="password" style={{ color: "#020053", fontFamily: "Abhaya Libre SemiBold" }}>
               Password
             </label>
             <input
               type="password"
+              name="password"
               className="form-control"
+              value={credentials.password}
+              onChange={handleChange}
+              required
               style={{
                 backgroundColor: '#FFF3F3',
                 border: '1px solid #020053',
               }}
             />
           </div>
+
+          {error && (
+            <div className="error-message" style={{ color: '#FA5252', textAlign: 'center', marginTop: '10px' }}>
+              {error}
+            </div>
+          )}
+
           <div id='bb'>
-          <button
-            to="#"
-            style={{
-              padding: '10px',
-              borderRadius: '10px',
-              border:'none',
-              backgroundColor: '#FA5252',
-              color: '#f5f2f2ea',
-              fontFamily: 'Abhaya Libre SemiBold',
-              margin: '10% 0% 0% 5%',
-              width:'20%',
-            }}
-          >
-            Login
-          </button>
-          <Link to="#" style={{ color: '#FA5252' }} id="forget">
-            Forget your password
-          </Link>
+            <button
+              type="submit"
+              className="login-btn"
+              disabled={loading}
+              style={{
+                padding: '10px',
+                borderRadius: '10px',
+                border: 'none',
+                backgroundColor: '#FA5252',
+                color: '#f5f2f2ea',
+                fontFamily: 'Abhaya Libre SemiBold',
+                margin: '10% 0% 0% 5%',
+                width: '20%',
+                cursor: loading ? 'not-allowed' : 'pointer'
+              }}
+            >
+              {loading ? 'Logging in...' : 'Login'}
+            </button>
           </div>
-          <img src="images/or.png" alt="" id="or" />
-          <div>
-            <Link
-                to=""
-                style={{ textDecoration: 'none', color: '#4A429A' }}
-              >
-              <div id="alinks">
-              <img
-                  src="images/GoogleChromeLogo.png"
-                  alt=""
-                  style={{ width: '20px', margin: '2%' }}
-                />
-                Continue with Google
-              
-            </div>
-            </Link>
-            <Link
-                to="/adminlogin"
-                style={{ textDecoration: 'none', color: '#4A429A' }}
-              >
-              <div id="alinks">
-              
-                <img
-                  src="images/User.png"
-                  alt=""
-                  style={{ width: '20px', margin: '2%' }}
-                />
-                Continue as Admin
-              
-            </div>
-            </Link>
-          </div>
-          <p
-            style={{
-              color: '#020053',
-              fontFamily: 'Abhaya Libre SemiBold',
-              margin: '0% 6% 0% 6%',
-            }}
-          >
-            Don't you have an account?<Link id="sign" to="/signup" style={{ color: '#FA5252' }}>
-            Sign Up
-          </Link>
-          </p>
+
+          <img src="images/or.png" alt="or separator" id="or" />
           
-        </div>
+          <div id="alinks">
+            <button type="button" className="google-btn"  style={{
+              backgroundColor: 'transparent',
+              border: '1px solid #4A429A',
+              borderRadius: '8px',
+              padding: '10px',
+              width: '100%',
+              margin: '10px 0px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <img
+                src="images/GoogleChromeLogo.png"
+                alt="Google logo"
+                style={{ width: '20px', marginRight: '10px' }}
+              />
+              Continue with Google
+            </button>
+          </div>
+          <div id="alinks">
+            <Link to="/adminlogin" className="google-btn"  style={{
+              backgroundColor: 'transparent',
+              border: '1px solid #4A429A',
+              borderRadius: '8px',
+              padding: '10px',
+              width: '100%',
+              margin: '10px 0px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <img
+                src="images/User.png"
+                alt="Admin login"
+                style={{ width: '20px', marginRight: '10px' }}
+              />
+              Continue as Admin
+            </Link>
+          </div>
+          <p className="signup-prompt" style={{
+            color: '#020053',
+            fontFamily: 'Abhaya Libre SemiBold',
+            margin: '20px 0',
+            textAlign: 'center'
+          }}>
+            Don't have an account?{' '}
+            <Link to="/signup" style={{ color: '#FA5252' }}>
+              Sign Up
+            </Link>
+          </p>
+        </form>
       </div>
     </div>
   );

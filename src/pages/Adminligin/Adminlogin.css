@@ -4,9 +4,13 @@
     height: 100vh;
     width: 100%;
 }
+.e{
+    margin-left:20%
+}
 #lg{
     position: absolute;
     right: 0%;
+    width: 15%;
 }
 #formulaires{
     width: 40%;

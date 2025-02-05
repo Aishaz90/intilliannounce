@@ -1,14 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutUser } from '../authActions';
 import './Nav.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 export default function Nav() {
+  const dispatch = useDispatch();
+  const { token } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate('/');
+  };
+
   return (
     <nav className="navbar navbar-expand-sm">
       <div className="container-fluid" style={{ paddingInlineStart: "10px" }}>
         <Link className="navbar-brand" to="/">
-        <img src={`${process.env.PUBLIC_URL}/pics/logoo.png`} alt="Logo" />
+          <img src={`${process.env.PUBLIC_URL}/pics/logoo.png`} alt="Logo" />
         </Link>
         <button
           className="navbar-toggler"
@@ -27,17 +39,39 @@ export default function Nav() {
               <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/categories">Categories</Link>
             </li>
             <li className="nav-item">
-            <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/listing">Listing Ads</Link>
+              <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/listing">Listing Ads</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/contact">Contact Us</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/login">Login</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/signup">Sign up</Link>
-            </li>
+            
+            {token ? (
+              <li className="nav-item">
+                <button 
+                  onClick={handleLogout}
+                  className="nav-link" 
+                  style={{ 
+                    color: "#F8E8DA", 
+                    width: "max-content", 
+                    fontSize: "22px",
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Logout
+                </button>
+              </li>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/login">Login</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/signup">Sign up</Link>
+                </li>
+              </>
+            )}
             <li className="nav-item">
               <Link className="nav-link" id="b11" style={{ color: "#F8E8DA", width: "80%", fontSize: "22px" }} to="/post-ad">Post Ads</Link>
             </li>
@@ -46,4 +80,4 @@ export default function Nav() {
       </div>
     </nav>
   );
-} 
+}
