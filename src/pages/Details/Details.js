@@ -116,7 +116,6 @@ export default function Details({ addToFavorites }) {
         <div id="divside"></div>
         <h4 id="Featuress" style={{ color: "#020053" }}>Features:</h4>
         <hr style={{ width: "90%", marginLeft: "3%" }} />
-
         <div>
           {product.features.map((feature, index) => (
             <button key={index} style={{
@@ -149,7 +148,7 @@ export default function Details({ addToFavorites }) {
       </div>
 
       <div id="location" style={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
-        <img src={ownerData.images.map} alt="Map" width="8%" height="26px" />
+        <img src={ownerData.images.map} alt="Map" width="8%" height="30px" />
         <div style={{ color: "#574e4e95", marginLeft: "10px" }}>
           {ownerData.location} <br />
           {ownerData.location}
@@ -231,34 +230,13 @@ export default function Details({ addToFavorites }) {
     </div>
     <p id="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
   </div>
-
-  <div id="leave">
-    <div id="divside"></div>
-    <h4 id="Leave">Leave Your Review</h4>
-    <hr style={{ width: '90%', marginLeft: '3%' }} />
-    <div style={{ margin: '0% 10% 5% 10%' }}>
-    <div style={{backgroundColor: '#fff',border: 'solid 1.5px #020053',marginBottom: '3%',borderRadius: '7px',width: '100%',}}>
-      <h5 style={{ color: '#574e4ea7', textAlign: 'center' }}>Your Rating</h5>
-      <div style={{ padding: '5% 15%' }}>
-        <img src="../images/fav1.png" alt="Rating 1" width="100%" />
-        <img src="../images/fav2.png" alt="Rating 2" width="100%" />
-        <img src="../images/fav3.png" alt="Rating 3" width="100%" />
-        <img src="../images/fav4.png" alt="Rating 4" width="100%" />
-        <img src="../images/fav5.png" alt="Rating 5" width="100%" />
-      </div>
-    </div>
-    <input type="text" className="form-control" style={{backgroundColor: '#fff',border: 'solid 1.5px #020053',marginBottom: '3%',width: '45%',}} placeholder="Enter your name . . ."/>
-      <input type="text" className="form-control" style={{   backgroundColor: '#fff', border: 'solid 1.5px #020053', width: '45%',float: 'right',margin: '-14% 0% 3% 3%',}}placeholder="Your mail address . . ."/>
-      <textarea className="form-control" rows="4" style={{ backgroundColor: '#fff', border: 'solid 1.5px #020053',}} placeholder="Type your review . . ."/>
-      <button style={{  width: 'max-content',  padding: '10px',  borderRadius: '10px',  backgroundColor: '#FF4367',  color: '#f5f2f2ea',  fontFamily: 'Abhaya Libre SemiBold', border: 'none', margin: '5% 0% 5% 0%', }}> Submit</button>    
-    </div>
-    
-  </div>
   <div id="related">
-      <div id="divsidee"></div>
+    <div className="rr">
+    <div id="divsidee"></div>
       <h4 id="Related">Related Ads :</h4>
       <Link
-        to="/Multimedia"
+        to="/listing"
+        id='va'
         style={{
           textDecoration: 'none',
           padding: '10px',
@@ -268,13 +246,14 @@ export default function Details({ addToFavorites }) {
           fontFamily: 'Abhaya Libre SemiBold',
           position:'absolute',
           left:'85%',
-          top:'383%',
+          top:'288%',
         }}
       >
         View All Ads
       </Link>
+    </div>
       <hr id='hr' />
-      <div >
+      <div id='idn'>
         {products.map((product) => (
           <div key={product.id} id={`cart${product.id}`}>
             <img src={product.image} alt={product.title} id="imgCat" />
