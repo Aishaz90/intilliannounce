@@ -12,7 +12,6 @@ export default function Listing() {
     const [searchParams] = useSearchParams();
     const cityParam = searchParams.get('city');
     const categoryParam = searchParams.get('category');
-    const keywordParam = searchParams.get('keyword');
     const [cards, setCards] = useState([]);
     const [searchAttempted, setSearchAttempted] = useState(false);
     const location = useLocation();
@@ -26,8 +25,6 @@ export default function Listing() {
                 article.location.toLowerCase() === cityParam.toLowerCase()
             );
         }
-
-                // Category filter
         if (categoryParam) {
             const categories = [
                 "Multimedia", "Household Appliances", "Sport", "Pets",
@@ -38,17 +35,8 @@ export default function Listing() {
                 categories.includes(article.categorie) && article.categorie === categoryParam
             );
         }
-
-        // Keyword filter
-        if (keywordParam) {
-            const lowerKeyword = keywordParam.toLowerCase();
-            filtered = filtered.filter(article =>
-                article.contenu.toLowerCase().includes(lowerKeyword)
-            );
-        }
-
         setCards(filtered);
-    }, [cityParam, categoryParam, keywordParam]);
+    }, [cityParam, categoryParam]);
 
     return (
         <div>

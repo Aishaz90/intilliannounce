@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../authActions';
@@ -25,7 +25,12 @@ export default function Nav() {
       navigate('/login');
     }
   };
-
+  useEffect(() => {
+    const protectedRoutes = ['/favorites', '/post-ad']; // ✅ Protect only these routes
+    if (!isAuthenticated && protectedRoutes.includes(window.location.pathname)) {
+      navigate('/login'); // ✅ Redirect only for protected pages
+    }
+  }, [isAuthenticated, navigate]);  
   return (
     <nav className="navbar navbar-expand-sm">
       <div className="container-fluid" style={{ paddingInlineStart: "10px" }}>
@@ -54,34 +59,38 @@ export default function Nav() {
             <li className="nav-item">
               <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/contact">Contact Us</Link>
             </li>
-            
             {isAuthenticated ? (
-    <li className="nav-item">
-      <button 
-        onClick={handleLogout}
-        className="nav-link" 
-        style={{ 
-          color: "#F8E8DA", 
-          width: "max-content", 
-          fontSize: "22px",
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer'
-        }}
-      >
-        Logout
-      </button>
-    </li>
-  ) : (
-    <>
-      <li className="nav-item">
-        <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/login">Login</Link>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/signup">Sign up</Link>
-      </li>
-    </>
-  )}
+              <>
+              <li className="nav-item">
+                <button 
+                  onClick={handleLogout}
+                  className="nav-link" 
+                  style={{ 
+                    color: "#F8E8DA", 
+                    width: "max-content", 
+                    fontSize: "22px",
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Logout
+                </button>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/favorites">Favorites <img src="pics/heart.png" width={30} alt="" /></Link>
+              </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/login">Login</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/signup">Sign up</Link>
+                </li>
+              </>
+            )}
             <li className="nav-item">
               <Link 
                 className="nav-link" 

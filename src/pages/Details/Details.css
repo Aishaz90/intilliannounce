@@ -1,7 +1,6 @@
 
 .contai{
     width: 50%;
-    background-color:#FFF3F3 ;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 25px;
     height: 1500px;
@@ -73,7 +72,6 @@
 
 #owner{
     width: 35%;
-    background-color:#FFF3F3 ;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 25px;
     height: 350px;
@@ -100,7 +98,6 @@
 }
 #contact{
     width: 35%;
-    background-color:#FFF3F3 ;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 25px;
     height: 400px;
@@ -118,7 +115,6 @@
 }
 #action{
     width: 35%;
-    background-color:#FFF3F3 ;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 25px;
     height: 200px;
@@ -135,7 +131,6 @@
 
 #review{
     width: 35%;
-    background-color:#FFF3F3 ;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 25px;
     height: 370px;
@@ -163,7 +158,6 @@
 
 #leave{
     width: 35%;
-    background-color:#FFF3F3 ;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 25px;
     height: 590px;
@@ -180,7 +174,6 @@
 }
 #related{
     width: 95%;
-    background-color:#FFF3F3 ;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 25px;
     height: 600px;
@@ -195,7 +188,6 @@
 }
 
 #cart9{
-    background-color:#FFF3F3 ;
     width: 20%;
     height:380px;
     position: absolute;
@@ -229,7 +221,6 @@
     
 }
 #cart7{
-    background-color:#FFF3F3 ;
     width: 20%;
     height:380px;
     position: absolute;
@@ -238,7 +229,6 @@
     border-radius: 3%;
 }
 #cart12{
-    background-color:#FFF3F3 ;
     width: 20%;
     height:380px;
     position: absolute;
@@ -247,7 +237,6 @@
     border-radius: 3%;
 }
 #cart5{
-    background-color:#FFF3F3 ;
     width: 20%;
     height:380px;
     position: absolute;
@@ -266,8 +255,7 @@
 @media screen and (max-width:1280px){
     #review{
         width: 35%;
-        background-color:#FFF3F3 ;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 25px;
         height: 370px;
         position: absolute;
@@ -276,8 +264,7 @@
     }
     #owner{
         width: 35%;
-        background-color:#FFF3F3 ;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 25px;
         height: 350px;
         position: absolute;
@@ -286,8 +273,7 @@
     }
     #contact{
         width: 35%;
-        background-color:#FFF3F3 ;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 25px;
         height: 400px;
         position: absolute;
@@ -296,8 +282,7 @@
     }
     #action{
         width: 35%;
-        background-color:#FFF3F3 ;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 25px;
         height: 200px;
         position: absolute;

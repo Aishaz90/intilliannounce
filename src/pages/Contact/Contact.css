@@ -1,6 +1,5 @@
 #container{
     width: 80%;
-    background-color:#FFF3F3 ;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 25px;
     margin-left:10%;
@@ -8,7 +7,6 @@
 }
 #container2{
     width: 80%;
-    background-color:#FFF3F3 ;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 25px;
     margin-top: 6%;
@@ -27,6 +25,7 @@
 }
 .form-control{
     padding-left: 70px;
+    background-color: rgb(255, 255, 255);
 }
 .b1{
     width:30%;

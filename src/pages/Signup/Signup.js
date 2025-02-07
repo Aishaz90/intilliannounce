@@ -55,7 +55,7 @@ export default function Signup() {
 
   return (
     <div id="imgcont">
-      <img src="pics/singup.png" className="imge" alt="Signup background" />
+      <img src="pics/singup1.png" className="imge" alt="Signup background" />
       <div id="divup">
         <Link className="navbar-brand" to="/">
           <img src="pics/logoo.png" alt="Logo" />
@@ -75,7 +75,6 @@ export default function Signup() {
               onChange={handleChange}
               required
               style={{
-                backgroundColor: "#FFF3F3",
                 border: "1px solid #020053",
                 marginBottom: "5px",
               }}
@@ -92,7 +91,6 @@ export default function Signup() {
               onChange={handleChange}
               required
               style={{
-                backgroundColor: "#FFF3F3",
                 border: "1px solid #020053",
                 marginBottom: "5px",
               }}
@@ -109,7 +107,6 @@ export default function Signup() {
               onChange={handleChange}
               required
               style={{
-                backgroundColor: "#FFF3F3",
                 border: "1px solid #020053",
                 marginBottom: "5px",
               }}
@@ -126,7 +123,6 @@ export default function Signup() {
               onChange={handleChange}
               required
               style={{
-                backgroundColor: "#FFF3F3",
                 border: "1px solid #020053",
               }}
             />

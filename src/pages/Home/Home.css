@@ -1,3 +1,53 @@
+.hero-container {
+  padding: 40px 20px;
+  margin: 50px auto;
+  width: 800px;
+  font-family: Abhaya Libre SemiBold;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: #020053;
+  font-weight: 600;
+  margin-bottom: 25px;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+#wel{
+  font-weight: bolder;
+  font-size: 4rem;
+  color: #ffffff;
+}
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #020053;
+  line-height: 1.6;
+  font-weight: bolder;
+  max-width: 600px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+    padding: 0 15px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+}
 #float{
   position: absolute;
   top: 0;
@@ -9,12 +59,12 @@
   color: #E31616;
 }
 #search{
-  margin-top: 17%;
+  margin-top: -3%;
 }
 #searchbar{
   background-color: #e31616aa;
-  width: 65%;
-  height: 150px;
+  width: 50%;
+  height: 100px;
   margin-left: 20%;
   margin-top: 2%;
   border-radius:20px;
@@ -64,21 +114,18 @@
   padding: 0 5%;
 }
 
-.card {
-  background-color:#FFF3F3 ;
+.cards {
   position: relative;
   border-radius: 15px;
   width: 85%;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(41, 39, 39, 0.1);
-  padding: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.cards:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  background-color:#FFF3F3 ;
 }
 
 #h5{
@@ -249,10 +296,16 @@
     width: 100.5%;
   }
   #search{
-    margin-top: 27%;
+    margin-top: 0%;
     width: max-content;
     margin-left: -5%;
   }
+  .hero-container {
+    padding: 40px 20px;
+    margin:60px 350px;
+    width: 800px;
+    font-family: Abhaya Libre SemiBold;
+  }  
   .imgcat{
     width: 180px;
   }

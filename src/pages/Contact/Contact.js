@@ -12,7 +12,8 @@ export default function Contact() {
     top: '50%',
     transform: 'translateY(-50%)',
     color: '#888',
-    fontSize: '1.2rem'
+    fontSize: '1.2rem',
+    backgroundColor: '#FFF',
   };
   
   const inputStyle = {

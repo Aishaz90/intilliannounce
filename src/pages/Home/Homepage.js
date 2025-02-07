@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import { useNavigate,Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import postImage from '../../pics/post2.png';
+import { useSelector,useDispatch } from 'react-redux';
 import Nav from '../../Nav/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Footer from '../../Nav/Footer';
 import articles from '../../data/article.json';
 const HomePage = () => {
+  const { token, adminToken } = useSelector((state) => state.auth);
+  const { language, translations } = useSelector((state) => state.language || {
+    language: 'en'
+  });  
+  const currentTranslations = translations?.[language] || translations?.en;
   const [cards, setCards] = useState([]);
   useEffect(() => {
-      // Use local JSON data instead of API call
       const filteredCards = articles.filter(article => article.id <= 6);
       setCards(filteredCards);
   }, []);
-  const { token} = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const handlePostAdClick = (e) => {
     if (!token) {
@@ -25,20 +27,30 @@ const HomePage = () => {
   };
   const [city, setCity] = useState('');
   const [category, setCategory] = useState('');
-  const [keyword, setKeyword] = useState('');
   const handleSearch = () => {
     const params = new URLSearchParams();
     if (city) params.append('city', city);
     if (category) params.append('category', category);
-    if (keyword) params.append('keyword', keyword);
     navigate(`/listing?${params.toString()}`);
   };
+  const isAuthenticated = token || adminToken;
+  useEffect(() => {
+      const protectedRoutes = ['/post-ad']; // ✅ Protect only these routes
+      if (!isAuthenticated && protectedRoutes.includes(window.location.pathname)) {
+        navigate('/login'); // ✅ Redirect only for protected pages
+      }
+  }, [isAuthenticated, navigate]);
   return (
     <div id="Post">
-      <img src="pics/post2.png" width={1519} height={700} id='imgss' alt="" />
+      <img src="pics/post3.png" width={1519} height={700} id='imgss' alt="" />
       <div id='float'>
         <Nav />
         <div id="search">
+          <div className="hero-container">
+            <h1 className="hero-title"><span id='wel'>{currentTranslations.welcome}</span> {currentTranslations.toint}</h1>
+            <p className="hero-subtitle" dangerouslySetInnerHTML={{ __html: currentTranslations.subtitle }}>
+            </p>
+          </div>
           <button
             style={{
               width: '200px',
@@ -55,7 +67,7 @@ const HomePage = () => {
             className='browsad'
           >
             <Link id='b' to='/listing'>
-            Browse Ads
+            {currentTranslations.browseAds}
             </Link>
           </button>
           <button
@@ -63,18 +75,13 @@ const HomePage = () => {
               width: '200px',
               padding: '10px',
               borderRadius: '25px',
-              backgroundColor: '#F8E8DA',
-              color: '#E31616',
               fontFamily: 'Abhaya Libre SemiBold',
               border: 'none',
               marginLeft: '30px',
               fontSize: 'x-large',
             }}
             className='postad'
-            onClick={handlePostAdClick}
-          >
-            Post an Ad
-          </button>
+            onClick={handlePostAdClick}> <Link to='/post-ad' id='lk' style={{color: '#E31616',}}>{currentTranslations.postAd}</Link></button>
         </div>
         <div id="searchbar">
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -90,8 +97,8 @@ const HomePage = () => {
                 width: '35%',
                 height: '50px',
                 background: "url('../../pics/MapPinLine.png') no-repeat 10px center",
-                backgroundColor: '#F8E8DA',
                 paddingLeft: '50px',
+                backgroundColor: '#FFF',
               }}
             >
               <option value="">Select a City</option>
@@ -110,13 +117,13 @@ const HomePage = () => {
                 fontSize: 'larger',
                 borderRadius: '15px',
                 width: '35%',
-                marginLeft: '20px',
+                marginLeft: '0px',
                 background: "url('../../pics/AlignLeft.png') no-repeat 10px center",
-                backgroundColor: '#F8E8DA',
+                backgroundColor: '#FFF',
                 paddingLeft: '50px',
               }}
             >
-              <option value="">Select a Category</option>
+              <option value="">{currentTranslations.selectCategory}</option>
               <option value="Multimedia">Multimedia</option>
               <option value="Household Appliances">Household Appliances</option>
               <option value="Sport">Sport</option>
@@ -126,26 +133,7 @@ const HomePage = () => {
               <option value="Work And Study">Work And Study</option>
               <option value="Vehicles">Vehicles</option>
             </select>
-            <input
-              value={keyword}
-              onChange={(e) => setKeyword(e.target.value)}
-              type="text"
-              className="form-control"
-              style={{
-                width: '35%',
-                height: '50px',
-                borderRadius: '15px',
-                marginLeft: '20px',
-                color: '#E31616',
-                fontFamily: 'Abhaya Libre SemiBold',
-                fontSize: 'larger',
-                background: "url('../../pics/CurrencyKzt.png') no-repeat 10px center",
-                backgroundColor: '#F8E8DA',
-                paddingLeft: '50px',
-              }}
-              placeholder="Type Your Keyword"
-              id="p"
-            />
+      
             <button
               style={{
                 width: '150px',
@@ -160,19 +148,15 @@ const HomePage = () => {
               type="submit"
               onClick={handleSearch}
             >
-              Search
+              {currentTranslations.search}
             </button>
-          </div>
-          <div style={{ display: 'flex', marginTop: '20px' }}>
-            <h4 style={{ color: 'rgba(56, 50, 50, 0.758)' }}>Trending Keywords:</h4>
-            <h6 style={{ marginTop: '8px', marginLeft: '20px', wordSpacing: '30px', color: 'rgba(56, 50, 50, 0.758)' }}>Camera Mobile Dress Table Pant ...</h6>
           </div>
         </div>
       </div>
       {/* Popular Categories */}
       <div id="cat">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <h1 style={{ color: '#020053', fontFamily: 'Abhaya Libre SemiBold', marginLeft: '5%' }}>Popular Categories</h1>
+          <h1 style={{ color: '#020053', fontFamily: 'Abhaya Libre SemiBold', marginLeft: '5%' }}>{currentTranslations.popularCategories}</h1>
           <Link to='/categories' id='lk' style={{color:'#FFF3F3',}}><button
             style={{
               width: '200px',
@@ -186,7 +170,7 @@ const HomePage = () => {
               fontSize: 'larger',
             }}
           >
-            View All Categories
+            {currentTranslations.viewAllCategories}
           </button></Link>
         </div>
         <div  className="scroll">
@@ -231,32 +215,32 @@ const HomePage = () => {
       <div className="containerr">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <h1 style={{ color: '#020053', fontFamily: 'Abhaya Libre SemiBold', marginLeft: '5%' }}>
-            Recently Published Ads
+          {currentTranslations.recentAds}
           </h1>
           <Link to='/listing' id='lk' style={{color:'#FFF3F3',width: 'max-content',width: 'max-content',
               borderRadius: '25px',
-              backgroundColor: '#E31616',
               color: '#F8E8DA',
               marginRight: '100px',
               fontFamily: 'Abhaya Libre SemiBold',
               border: 'none',
               fontSize: 'larger',
               height: '50px',
+              backgroundColor: '#E31616',
               paddingLeft: '2%',
               paddingTop:"0.7%",
               paddingRight: '2%',}}>
-            View All Ads
+            {currentTranslations.viewAllAds}
           </Link>
         </div>
         <div className="card-container">
           {cards.map((product,index) => (
-            <div className="card" style={{backgroundColor:'#FFF3F3'}} key={index}>
+            <div className="cards" key={index}>
               <img src={product.image} alt={product.title}  id="img"/>
               <Link to={`/details/${product.id}`} id='lk'><h5 id='h5'>{product.contenu}</h5></Link>
               <img src="images/Heart.png" alt="Favorite" width="25px" style={{position:"absolute", left: '87%', top: '56%'}}/>
               <img src="images/MapPinLine.png" alt="Location" width="13%" height="10%" id="map"/>
               <span style={{color: '#929292', position: 'absolute', top: '77%',left: '16%'}}>{product.location}</span>
-              <p style={{color:' #BBB3B3', float: 'right', padding:'5%', marginTop: '11%',marginLeft:'60%'}}>{product.date}</p>
+              <p style={{color:'rgb(105, 104, 104)', float: 'right', padding:'5%', marginTop: '11%',marginLeft:'60%'}}>{product.date}</p>
               <h4 id='h4'>{product.prix} DH</h4>
             </div>
           ))}
@@ -267,19 +251,19 @@ const HomePage = () => {
       <div className="containerr">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <h1 style={{ color: '#020053', fontFamily: 'Abhaya Libre SemiBold', marginLeft: '5%' }}>
-          Popular and Featurad Ads
+          {currentTranslations.featuredAds}
           </h1>
         </div>
         <div className="card-container slider">
         <div className="slider-track">
           {[...cards,...cards].map((product,index) => (
-            <div className="card c" style={{backgroundColor:'#FFF3F3'}} key={index}>
+            <div className="cards c" key={index}>
               <img src={product.image} alt={product.contenu}  id="img"/>
               <Link to={`/details/${product.id}`} id='lk'><h5 id='h5'>{product.contenu}</h5></Link>
               <img src="images/Heart.png" alt="Favorite" width="25px" style={{position:"absolute", left: '87%', top: '56%'}}/>
               <img src="images/MapPinLine.png" alt="Location" width="13%" height="10%" id="map"/>
               <span style={{color: '#929292', position: 'absolute', top: '77%',left: '16%'}}>{product.location}</span>
-              <p style={{color:' #BBB3B3', float: 'right', padding:'5%', marginTop: '11%',marginLeft:'60%'}}>{product.date}</p>
+              <p style={{color:'rgb(92, 91, 91)', float: 'right', padding:'5%', marginTop: '11%',marginLeft:'60%'}}>{product.date}</p>
               <h4 id='h4'>{product.prix} DH</h4>
             </div>
           ))}
@@ -288,8 +272,7 @@ const HomePage = () => {
       </div>
       <div>
       <div>
-        <h1 className="hero-heading">
-          IntilliAnnounce <br /> Here for You
+        <h1 className="hero-heading" dangerouslySetInnerHTML={{ __html: currentTranslations.hereForYou }}>
         </h1>
       </div>
 
@@ -300,7 +283,7 @@ const HomePage = () => {
             <img src="pics/c6.png" alt="" width="100%" />
           </div>
           <div>
-            <h1 className="feature-title">Sell Your Item Safely</h1>
+            <h1 className="feature-title">{currentTranslations.sellSafely}</h1>
             <h3 className="feature-description">
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
@@ -313,7 +296,7 @@ const HomePage = () => {
             <img src="pics/c1.png" alt="" width="100%" />
           </div>
           <div>
-            <h1 className="feature-title">Buy Directly</h1>
+            <h1 className="feature-title">{currentTranslations.buyDirectly}</h1>
             <h3 className="feature-description">
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
@@ -326,7 +309,7 @@ const HomePage = () => {
             <img src="pics/c2.png" alt="" width="100%" />
           </div>
           <div>
-            <h1 className="feature-title">Friendly Platform</h1>
+            <h1 className="feature-title">{currentTranslations.friendlyPlatform}</h1>
             <h3 className="feature-description">
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
@@ -341,7 +324,7 @@ const HomePage = () => {
             <img src="pics/c3.png" alt="" width="100%" />
           </div>
           <div>
-            <h1 className="feature-title">Pay in Person</h1>
+            <h1 className="feature-title">{currentTranslations.sellSafely}</h1>
             <h3 className="feature-description">
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
@@ -354,7 +337,7 @@ const HomePage = () => {
             <img src="pics/c4.png" alt="" width="100%" />
           </div>
           <div>
-            <h1 className="feature-title">24/7 Support</h1>
+            <h1 className="feature-title">{currentTranslations.support247}</h1>
             <h3 className="feature-description">
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
@@ -367,7 +350,7 @@ const HomePage = () => {
             <img src="pics/c5.png" alt="" width="100%" />
           </div>
           <div>
-            <h1 className="feature-title">Verified Users</h1>
+            <h1 className="feature-title">{currentTranslations.verifiedUsers}</h1>
             <h3 className="feature-description">
               Lorem ipsum dolor sit amet, <br /> consetetur sadipscing elitr,
               sed
@@ -378,10 +361,9 @@ const HomePage = () => {
 
       {/* Join Us Section */}
       <div>
-        <h1 className="join-heading">
-          You want join us <br /> and sell your products?
+        <h1 className="join-heading" dangerouslySetInnerHTML={{ __html: currentTranslations.joinUsTitle }}>
         </h1>
-        <h3 className="join-subheading">Just 4 easy steps</h3>
+        <h3 className="join-subheading">{currentTranslations.joinUsSubtitle}</h3>
       </div>
 
       <div className="step-section">
@@ -395,9 +377,8 @@ const HomePage = () => {
             />
           </div>
           <div>
-            <h1 className="step-title">Create your Account</h1>
-            <h3 className="step-description">
-              create your account <br /> for free
+            <h1 className="step-title">{currentTranslations.createAccount}</h1>
+            <h3 className="step-description" dangerouslySetInnerHTML={{ __html: currentTranslations.accountDesc }}>
             </h3>
           </div>
         </div>
@@ -412,9 +393,8 @@ const HomePage = () => {
             />
           </div>
           <div>
-            <h1 className="step-title">Choose Product</h1>
-            <h3 className="step-description">
-              choose any product <br /> you to sell
+            <h1 className="step-title">{currentTranslations.chooseProduct}</h1>
+            <h3 className="step-description" dangerouslySetInnerHTML={{ __html: currentTranslations.productDesc }}>
             </h3>
           </div>
         </div>
@@ -429,9 +409,8 @@ const HomePage = () => {
             />
           </div>
           <div>
-            <h1 className="step-title">Fill the form</h1>
-            <h3 className="step-description">
-              fill up the form for <br /> create an announce
+            <h1 className="step-title">{currentTranslations.fillForm}</h1>
+            <h3 className="step-description" dangerouslySetInnerHTML={{ __html: currentTranslations.formDesc }}>
             </h3>
           </div>
         </div>
@@ -446,9 +425,8 @@ const HomePage = () => {
             />
           </div>
           <div>
-            <h1 className="step-title">Post Them</h1>
-            <h3 className="step-description">
-              And finally post your <br /> announce successfully
+            <h1 className="step-title">{currentTranslations.postAnnounce}</h1>
+            <h3 className="step-description" dangerouslySetInnerHTML={{ __html: currentTranslations.postDesc }}>
             </h3>
           </div>
         </div>

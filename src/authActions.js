@@ -2,16 +2,13 @@ export const loginUser = (credentials) => async (dispatch) => {
     try {
       dispatch({ type: 'AUTH_REQUEST' });
       
-      // Simulated API call for login
       const response = await new Promise((resolve) => 
         setTimeout(() => resolve({ token: 'mock-token' }), 1000)
       );
-  
-      dispatch({
-        type: 'LOGIN_SUCCESS',
-        payload: response
-      });
-      
+
+      localStorage.setItem('userToken', response.token);
+      dispatch({ type: 'LOGIN_SUCCESS', payload: response });
+    
     } catch (error) {
       dispatch({
         type: 'AUTH_FAILURE',
@@ -56,16 +53,12 @@ export const loginUser = (credentials) => async (dispatch) => {
     try {
       dispatch({ type: 'AUTH_REQUEST' });
       
-      // Simulated API call for registration
       const response = await new Promise((resolve) => 
         setTimeout(() => resolve({ token: 'mock-token' }), 1000)
       );
   
-      dispatch({
-        type: 'REGISTER_SUCCESS',
-        payload: response
-      });
-      
+      localStorage.setItem('userToken', response.token);
+      dispatch({ type: 'REGISTER_SUCCESS', payload: response });  
     } catch (error) {
       dispatch({
         type: 'AUTH_FAILURE',

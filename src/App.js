@@ -1,5 +1,6 @@
 import './App.css';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation,Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import HomePage from './pages/Home/Homepage';
 import Listing from './pages/Listing/Listing';
 import Nav from './Nav/Nav'
@@ -13,8 +14,11 @@ import Signup from './pages/Signup/Signup';
 import Adminlogin from './pages/Adminligin/Adminlogin';
 import ConstCat from './pages/Multimedia/ConstCat';
 import Details from './pages/Details/Details';
+import Favorites from "./pages/Favorites/Favorites"
+import SettingsSidebar from './pages/SettingsSidebar/SettingsSidebar';
 export default  function App() {
   const location = useLocation();
+  const { token } = useSelector((state) => state.auth);
   useEffect(() => {
     console.log("Current Path:", location.pathname);
     if (location.pathname === "/listing") {
@@ -40,7 +44,9 @@ export default  function App() {
         <Route path="/signup" element={<Signup/>} />  
         <Route path="/adminlogin" element={<Adminlogin/>} /> 
         <Route path="/details/:id" element={<Details />} />
+        <Route path="/favorites" element={token ? <Favorites /> : <Navigate to="/login" />}  />
       </Routes>
+      <SettingsSidebar/> 
       {/* {location.pathname !== '/'&&location.pathname !== '/listing'&&location.pathname !== '/categories'&& location.pathname !== '/contact'&&location.pathname !== '/login'&&location.pathname !== '/signup'&&<Footer/>} */}
     </div>
   );

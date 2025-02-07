@@ -24,7 +24,6 @@ export default function Login() {
     e.preventDefault();
     dispatch(loginUser(credentials));
   };
-
   const handleChange = (e) => {
     setCredentials({
       ...credentials,
@@ -34,7 +33,7 @@ export default function Login() {
 
   return (
     <div id="imgcont">
-      <img src="pics/login.png" className="imge" alt="Login background" />
+      <img src="pics/login1.png" className="imge" alt="Login background" />
       <div id="divup">
         <Link className="navbar-brand" to="/">
           <img src="pics/logoo.png" alt="Logo" />
@@ -53,7 +52,6 @@ export default function Login() {
               onChange={handleChange}
               required
               style={{
-                backgroundColor: '#FFF3F3',
                 border: '1px solid #020053',
                 marginBottom: '5px',
               }}
@@ -70,7 +68,6 @@ export default function Login() {
               onChange={handleChange}
               required
               style={{
-                backgroundColor: '#FFF3F3',
                 border: '1px solid #020053',
               }}
             />

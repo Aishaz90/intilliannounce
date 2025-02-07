@@ -35,7 +35,7 @@ export default function Adminlogin() {
 
   return (
     <div id="imgcont">
-      <img src="pics/AsAdmin.png" className="imge e" alt="Admin background" />
+      <img src="pics/AsAdmin1.png" className="imge e" alt="Admin background" />
       <div id="divupp">
         <Link className="navbar-brand" to="/">
           <img src="pics/logoo.png" alt="Logo" id='lg'/>
@@ -59,7 +59,6 @@ export default function Adminlogin() {
               value={credentials.email}
               onChange={handleChange}
               style={{
-                backgroundColor: '#FFF3F3',
                 border: '1px solid #020053',
                 marginBottom: '5px',
               }}
@@ -80,7 +79,6 @@ export default function Adminlogin() {
               value={credentials.password}
               onChange={handleChange}
               style={{
-                backgroundColor: '#FFF3F3',
                 border: '1px solid #020053',
               }}
             />
