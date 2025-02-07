@@ -36,7 +36,7 @@ export default  function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/listing" element={<Listing/>} />
-        {/* <Route path="/multimedia" element={<Multimedia/>} />  */}
+        {/* <Route path="/multimedia" ele%ment={<Multimedia/>} />  */}
         <Route path="/:category" element={<ConstCat/>} />
         <Route path="/categories" element={<Categories/>} />
         <Route path="/contact" element={<Contact/>} /> 
