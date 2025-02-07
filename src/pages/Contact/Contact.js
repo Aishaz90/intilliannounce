@@ -62,51 +62,50 @@ export default function Contact() {
             <h4 style={{ color: '#020053', fontFamily: 'Abhaya Libre SemiBold', fontWeight: 'bold', marginTop: '3%', marginLeft: '2%' }}>Send Message to Us</h4>
           </div>
           <form style={{ padding: '20px', position: 'relative' }}>
-  <div style={{ position: 'relative', display: 'inline-block', width: '48%' }}>
-    <i className="fa fa-user" style={iconStyle}></i>
-    <input 
-      type="text" 
-      placeholder="Enter your name ..." 
-      className="form-control"
-      style={inputStyle} 
-    />
-  </div>
+            <div style={{ position: 'relative', display: 'inline-block', width: '48%' }}>
+              <i className="fa fa-user" style={iconStyle}></i>
+              <input 
+                type="text" 
+                placeholder="Enter your name ..." 
+                className="form-control"
+                style={inputStyle} 
+              />
+            </div>
 
-  <div style={{ position: 'relative', display: 'inline-block', width: '48%', marginLeft: '2.5%' }}>
-    <i className="fa fa-envelope" style={iconStyle}></i>
-    <input 
-      type="text" 
-      placeholder="Enter your Mail Address ..." 
-      className="form-control" 
-      style={inputStyle} 
-    />
-  </div>
+            <div style={{ position: 'relative', display: 'inline-block', width: '48%', marginLeft: '2.5%' }}>
+              <i className="fa fa-envelope" style={iconStyle}></i>
+              <input 
+                type="text" 
+                placeholder="Enter your Mail Address ..." 
+                className="form-control" 
+                style={inputStyle} 
+              />
+            </div>
 
-  <div style={{ position: 'relative', width: '100%', marginTop: '20px' }}>
-    <i className="fa fa-tag" style={iconStyle}></i>
-    <input 
-      type="text" 
-      placeholder="Subject" 
-      className="form-control" 
-      style={inputStyle} 
-    />
-  </div>
+            <div style={{ position: 'relative', width: '100%', marginTop: '20px' }}>
+              <i className="fa fa-tag" style={iconStyle}></i>
+              <input 
+                type="text" 
+                placeholder="Subject" 
+                className="form-control" 
+                style={inputStyle} 
+              />
+            </div>
 
-  <div style={{ position: 'relative', width: '100%', marginTop: '20px' }}>
-    <i className="fa fa-comment" style={{ ...iconStyle, top: '20px' }}></i>
-    <textarea 
-      name="msg" 
-      placeholder="Type your Message ..." 
-      className="form-control w-100 mt-3" 
-      style={textareaStyle} 
-    ></textarea>
-  </div>
+            <div style={{ position: 'relative', width: '100%', marginTop: '20px' }}>
+              <i className="fa fa-comment" style={{ ...iconStyle, top: '20px' }}></i>
+              <textarea 
+                name="msg" 
+                placeholder="Type your Message ..." 
+                className="form-control w-100 mt-3" 
+                style={textareaStyle} 
+              ></textarea>
+            </div>
 
-  <input type="submit" value="Send" className="b1" style={{ marginTop: '50px', fontWeight: 'bolder', fontFamily: 'Abhaya Libre SemiBold' }} />
-</form>
-
+            <input type="submit" value="Send" className="b1" style={{ marginTop: '50px', fontWeight: 'bolder', fontFamily: 'Abhaya Libre SemiBold' }} />
+          </form>
         </div>
-        
+      
         <div>
           <div id="d1" style={{ display: 'flex', width: '100%' }}>
             <div className="divside"></div>

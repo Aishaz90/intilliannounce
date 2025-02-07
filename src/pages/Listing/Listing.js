@@ -7,7 +7,7 @@ import Footer from '../../Nav/Footer';
 import { Link } from 'react-router-dom';
 import articles from '../../data/article.json'; // Adjust path as needed
 import { useSearchParams,useLocation  } from 'react-router-dom';
-
+import { getAds} from '../../utils/storage';
 export default function Listing() {
     const [searchParams] = useSearchParams();
     const cityParam = searchParams.get('city');
@@ -18,11 +18,12 @@ export default function Listing() {
     useEffect(() => {
         const params = new URLSearchParams(location.search);
         setSearchAttempted(params.toString().length > 0);    
-        let filtered = articles;
+        let filtered = [...articles, ...getAds()]; // Combine both sources
+        
         // City filter
         if (cityParam) {
             filtered = filtered.filter(article =>
-                article.location.toLowerCase() === cityParam.toLowerCase()
+                article.location?.toLowerCase() === cityParam.toLowerCase()
             );
         }
         if (categoryParam) {
@@ -36,7 +37,7 @@ export default function Listing() {
             );
         }
         setCards(filtered);
-    }, [cityParam, categoryParam]);
+    }, [cityParam, categoryParam, location.search]);
 
     return (
         <div>
