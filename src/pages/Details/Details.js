@@ -3,7 +3,7 @@ import Nav from '../../Nav/Nav';
 import { Link, useParams } from 'react-router-dom';
 import Footer from '../../Nav/Footer';
 import './Details.css'
-import detailsData from '../../data/details.json'; // Import JSON data
+import detailsData from '../../data/details.json'
 export default function Details({ addToFavorites }) {
   const [favorites, setFavorites] = useState([]);
   const [product, setProduct] = useState(null);
@@ -20,7 +20,6 @@ export default function Details({ addToFavorites }) {
   };
 
   useEffect(() => {
-    // Find the product with matching ID when component mounts or ID changes
     const foundProduct = detailsData.find((item) => item.id === parseInt(id));
     setProduct(foundProduct);
   }, [id]);

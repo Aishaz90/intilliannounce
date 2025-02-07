@@ -10,13 +10,14 @@ export default function Nav() {
   const dispatch = useDispatch();
   const { token, adminToken } = useSelector((state) => state.auth);
   const navigate = useNavigate();
-
+  const favorites = useSelector((state) => state.favorites);
+  const favoriteCount = favorites.length;
   // Combine both authentication states
   const isAuthenticated = token || adminToken;
 
   const handleLogout = () => {
     dispatch(logoutUser());
-    navigate('/');
+    navigate('/login');
   };
 
   const handlePostAdClick = (e) => {
@@ -78,7 +79,29 @@ export default function Nav() {
                 </button>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/favorites">Favorites <img src="pics/heart.png" width={30} alt="" /></Link>
+                <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/favorites"><img src="pics/heart.png" width={30} alt="" />
+                {favoriteCount > 0 && (
+                <span 
+                  style={{
+                    // position: 'absolute',
+                    // top: '10px',
+                    // right: '-5px',
+                    background: '#ff4757',
+                    color: 'white',
+                    borderRadius: '50%',
+                    width: '20px',
+                    height: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.1rem',
+                    marginLeft:'55%',
+                  }}
+                >
+                  {favoriteCount}
+                </span>
+              )}
+                </Link>
               </li>
               </>
             ) : (

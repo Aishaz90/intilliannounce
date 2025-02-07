@@ -3,7 +3,7 @@ import './Postad.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Nav from '../../Nav/Nav';
 import Footer from '../../Nav/Footer';
-import { saveAd,updateAd } from '../../utils/storage';
+import { saveAd } from '../../utils/storage';
 import { useParams } from 'react-router-dom';
 export default function Postad() {
   const navigate = useNavigate();
