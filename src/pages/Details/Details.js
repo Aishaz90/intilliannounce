@@ -89,27 +89,20 @@ export default function Details({ addToFavorites }) {
       </div>
       <div className="contai">
         <img src={product.img.src} height={500} alt={product.img.alt} id='caskP' />
-
-        <div className="scrollI">
-          {product.scrollImages.map((image, index) => (
-            <img key={index} src={image.src} alt={image.alt} style={{ width: "45%", height: "250px", marginLeft: "3%" }} />
-          ))}
-        </div>
-
         <div className="text">
-          <span id='span' style={{ color: "#929292", fontFamily: "Abhaya Libre SemiBold" }}>
+          <span id='span' style={{ color: "#929292", fontFamily: "Abhaya Libre SemiBold",marginLeft: "55%" }}>
             {product.text.date}
           </span>
-          <img src={product.text.views.src} alt="Views" style={{ marginLeft: "2%" }} />
-          <span style={{ color: "#929292", fontFamily: "Abhaya Libre SemiBold" }}>
+          <img src={product.text.views.src} alt="Views" style={{ marginLeft: "1%" }} />
+          <span style={{ color: "#929292", fontFamily: "Abhaya Libre SemiBold",marginLeft: "1%" }}>
             {product.text.views.count}
           </span>
           <p id="descriptionn">{product.text.description}</p>
           <h2 id="price" style={{ color: "#020053", fontSize: "50px", fontWeight: "bold" }}>
             {product.text.price}
           </h2>
-          <p style={{ color: "#929292", fontFamily: "Abhaya Libre SemiBold", marginLeft: "32%", marginTop: "-12%" }}>
-            {product.text.negotiable}
+          <p style={{ color: "#929292", fontFamily: "Abhaya Libre SemiBold", marginLeft: "80%", marginTop: "-12%" }}>
+          negotiable : {product.text.negotiable}
           </p>
         </div>
 
@@ -197,7 +190,7 @@ export default function Details({ addToFavorites }) {
       <button   style={{ width: 'max-content',padding: '10px',borderRadius: '10px',backgroundColor: '#FF4367',color: '#f5f2f2ea',fontFamily: 'Abhaya Libre, SemiBold',border: 'none',margin: '5% 0% 0% 20%'}}> <img src="../images/send.png" alt="" />Send To Seller</button>
           </div>
       </div>
-      <div id="action">
+      {/* <div id="action">
     <div id="divside"></div>
     <h4 style={{ color: '#020053' }} id="AdAction">Ad Action :</h4>
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
@@ -214,7 +207,7 @@ export default function Details({ addToFavorites }) {
         <p style={{ color: '#FF4367', fontFamily: 'Abhaya Libre SemiBold', fontWeight: 'bold' }}>Favourite</p>
       </div>
     </div>
-  </div>
+  </div> */}
 
   <div id="review">
     <div id="divside"></div>
@@ -246,7 +239,7 @@ export default function Details({ addToFavorites }) {
           fontFamily: 'Abhaya Libre SemiBold',
           position:'absolute',
           left:'85%',
-          top:'288%',
+          top:'256%',
         }}
       >
         View All Ads

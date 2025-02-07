@@ -69,20 +69,19 @@ export default function Login() {
               required
               style={{
                 border: '1px solid #020053',
+                marginBottom: '5px',
               }}
             />
           </div>
-
-          {error && (
-            <div className="error-message" style={{ color: '#FA5252', textAlign: 'center', marginTop: '10px' }}>
+          {/* {error && (
+            <div className="error-message" style={{ color: '#FA5252', textAlign: 'center', marginTop: '3px' }}>
               {error}
             </div>
-          )}
-
-          <div id='bb'>
+          )} */}
             <button
               type="submit"
               className="login-btn"
+              id='bit'
               disabled={loading}
               style={{
                 padding: '10px',
@@ -91,14 +90,13 @@ export default function Login() {
                 backgroundColor: '#FA5252',
                 color: '#f5f2f2ea',
                 fontFamily: 'Abhaya Libre SemiBold',
-                margin: '10% 0% 0% 5%',
+                margin: '3% 0% 0% 5%',
                 width: '20%',
                 cursor: loading ? 'not-allowed' : 'pointer'
               }}
             >
               {loading ? 'Logging in...' : 'Login'}
             </button>
-          </div>
 
           <img src="images/or.png" alt="or separator" id="or" />
           

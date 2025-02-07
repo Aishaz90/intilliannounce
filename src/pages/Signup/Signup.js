@@ -131,8 +131,8 @@ export default function Signup() {
           {(error || localError) && (
             <div style={{ 
               color: '#FA5252', 
-              textAlign: 'center', 
-              margin: '10px 0',
+              textAlign: 'left', 
+              margin: '0px 0 0 15px',
               fontFamily: 'Abhaya Libre SemiBold'
             }}>
               {error || localError}
