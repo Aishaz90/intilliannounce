@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './SettingsSidebar.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from '../../languages/languageSlice';
@@ -6,11 +6,11 @@ import { setLanguage } from '../../languages/languageSlice';
 const SettingsSidebar = () => {
   const dispatch = useDispatch();
   const { language } = useSelector((state) => state.language);
+  const settingsRef = useRef(null); // Ref for the settings container
 
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Load settings from localStorage on page load
   useEffect(() => {
     const savedDarkMode = localStorage.getItem('darkMode') === 'true';
     const savedLanguage = localStorage.getItem('language') || 'en';
@@ -23,24 +23,42 @@ const SettingsSidebar = () => {
     }
   }, [dispatch]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (settingsRef.current && !settingsRef.current.contains(event.target)) {
+        setIsSettingsOpen(false);
+      }
+    };
+
+    if (isSettingsOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isSettingsOpen]);
+
   const toggleSettings = () => {
-    setIsSettingsOpen(!isSettingsOpen);
+    setIsSettingsOpen((prev) => !prev);
   };
 
   const toggleDarkMode = () => {
     const newDarkMode = !isDarkMode;
     setIsDarkMode(newDarkMode);
     document.body.classList.toggle('dark-mode', newDarkMode);
-    localStorage.setItem('darkMode', newDarkMode); // Persist dark mode
+    localStorage.setItem('darkMode', newDarkMode);
   };
 
   const handleLanguageChange = (lang) => {
     dispatch(setLanguage(lang));
-    localStorage.setItem('language', lang); // Persist language
+    localStorage.setItem('language', lang);
   };
 
   return (
-    <div className="settings-container">
+    <div className="settings-container" ref={settingsRef}>
       <img
         onClick={toggleSettings}
         className="settings-icon"
@@ -79,4 +97,4 @@ const SettingsSidebar = () => {
   );
 };
 
-export default SettingsSidebar;
+export default SettingsSidebar; 

@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Postad.css';
+import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import Nav from '../../Nav/Nav';
 import Footer from '../../Nav/Footer';
-import { saveAd } from '../../utils/storage';
+import { saveAd,getAds, updateAd } from '../../utils/storage';
 import { useParams } from 'react-router-dom';
 export default function Postad() {
   const navigate = useNavigate();
   const [previewImage, setPreviewImage] = useState(null);
+  const { id } = useParams();
+  const { user } = useSelector((state) => state.auth);
+  const isEditMode = !!id;
   const [formData, setFormData] = useState({
     title: '',
     category: '',
@@ -33,6 +37,7 @@ export default function Postad() {
     const reader = new FileReader();
     reader.onloadend = () => {
       setPreviewImage(reader.result);
+      setFormData(prev => ({ ...prev, image: reader.result }));
     };
     reader.readAsDataURL(file);
   };
@@ -43,7 +48,19 @@ export default function Postad() {
       [name]: type === 'checkbox' ? checked : value
     }));
   };
-
+  useEffect(() => {
+    if (isEditMode) {
+      const ads = getAds();
+      const existingAd = ads.find(ad => ad.id === Number(id));
+      if (existingAd && existingAd.userId === user.id) {
+        setFormData({
+          ...existingAd,
+          agreed: true
+        });
+        setPreviewImage(existingAd.image);  // Set the existing image
+      }
+    }
+  }, [id, user.id, isEditMode]);
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -60,33 +77,44 @@ export default function Postad() {
     
     const currentDate = new Date();
     const formattedDate = `${currentDate.getDate()},${months[currentDate.getMonth()]},${currentDate.getFullYear()}`;
-    // Save ad
-    saveAd({
+    if (isEditMode) {
+      updateAd(Number(id), {
         ...formData,
         date: formattedDate,
         location: formData.city,
         contenu: formData.title,
         prix: formData.price || 'Price on call',
         image: previewImage || '/pics/default-ad.png', // Use preview or default
-        // Add other necessary fields for card structure
+        categorie: formData.category
+      });
+    } else{
+      saveAd({
+        ...formData,
+        date: formattedDate,
+        location: formData.city,
+        contenu: formData.title,
+        prix: formData.price || 'Price on call',
+        image: previewImage || '/pics/default-ad.png', // Use preview or default
         categorie: formData.category,
         imageH: '/images/Heart.png', // Default heart icon
         imageM: '/images/MapPinLine.png' // Default map icon
-      });
+      },user.id);
+    }
+    
 
-    navigate('/listing');
+    navigate('/your-ads');
   };
 
   return (
     <div className="post-ad-container">
       <div className='post'>
-        <img src="pics/post1.png" alt="" className='img1' />
+        <img src={`${process.env.PUBLIC_URL}/pics/post1.png`} alt="" className='img1' />
         <div className='blur'>
           <Nav />
           <div className="title">
-            <h1 id='h11'>Post Ads</h1>
+            <h1 id='h11'>{isEditMode ? 'Update Ad' : 'Post Your Ad'}</h1>
             <Link to="/" className='aa'>Home ---</Link>
-            <Link to='/post-ad' className='aa'>PostAd</Link>
+            <Link to='/post-ad' className='aa'>{isEditMode ? 'UpdateAd' : 'PostAd'}</Link>
           </div>
         </div>
       </div>
@@ -278,11 +306,11 @@ export default function Postad() {
                   name="agreed"
                   checked={formData.agreed}
                   onChange={handleInputChange}
-                />
+                />  
                 <label htmlFor="termsAgreement">I agree to all Terms of Use & Posting Rules *</label>
               </div>
 
-              <button type="submit" className="submit-button">Post Ad</button>
+              <button type="submit" className="submit-button">{isEditMode ? 'Update Your Ad' : 'Post Your Ad'}</button>
             </div>
           </div>
         </form>

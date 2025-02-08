@@ -60,24 +60,19 @@ export default function Nav() {
             <li className="nav-item">
               <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/contact">Contact Us</Link>
             </li>
+            {isAuthenticated && !adminToken && ( // Show only for non-admin users
+              <li className="nav-item">
+                <Link 
+                  className="nav-link" 
+                  style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} 
+                  to="/your-ads"
+                >
+                  Your Ads
+                </Link>
+              </li>
+            )}
             {isAuthenticated ? (
               <>
-              <li className="nav-item">
-                <button 
-                  onClick={handleLogout}
-                  className="nav-link" 
-                  style={{ 
-                    color: "#F8E8DA", 
-                    width: "max-content", 
-                    fontSize: "22px",
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Logout
-                </button>
-              </li>
               <li className="nav-item">
                 <Link className="nav-link" style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} to="/favorites"><img src="pics/heart.png" width={30} alt="" />
                 {favoriteCount > 0 && (
@@ -102,6 +97,22 @@ export default function Nav() {
                 </span>
               )}
                 </Link>
+              </li>
+              <li className="nav-item">
+                <button 
+                  onClick={handleLogout}
+                  className="nav-link" 
+                  style={{ 
+                    color: "#F8E8DA", 
+                    width: "max-content", 
+                    fontSize: "22px",
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Logout
+                </button>
               </li>
               </>
             ) : (

@@ -17,6 +17,7 @@ import Details from './pages/Details/Details';
 import Favorites from "./pages/Favorites/Favorites"
 import SettingsSidebar from './pages/SettingsSidebar/SettingsSidebar';
 import Postad from './pages/Postad/Postad';
+import YourAds from './pages/YourAds/YourAds';
 export default  function App() {
   const location = useLocation();
   const { token } = useSelector((state) => state.auth);
@@ -47,6 +48,8 @@ export default  function App() {
         <Route path="/details/:id" element={<Details />} />
         <Route path="/favorites" element={token ? <Favorites /> : <Navigate to="/login" />}  />
         <Route path="/post-ad" element={<Postad />} />
+        <Route path="/post-ad/:id" element={<Postad />} />
+        <Route path="/your-ads" element={<YourAds />} />
       </Routes>
       <SettingsSidebar/> 
       {/* {location.pathname !== '/'&&location.pathname !== '/listing'&&location.pathname !== '/categories'&& location.pathname !== '/contact'&&location.pathname !== '/login'&&location.pathname !== '/signup'&&<Footer/>} */}

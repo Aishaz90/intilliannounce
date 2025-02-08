@@ -21,9 +21,9 @@ export default function Favorites() {
             </div>
         </div>
         <div  className="fav">
-            <h2 style={{ color: '#020053', fontFamily: 'Abhaya Libre SemiBold',fontSize:'3rem', textAlign:'center',marginBottom:'5%',fontWeight:'2rem', }}>My Favorites Products</h2>
+            <h2 style={{ color: '#020053', fontFamily: 'Abhaya Libre SemiBold',fontSize:'3rem', textAlign:'center',marginBottom:'5%',fontWeight:'2rem', }}>Your Favorites Products</h2>
             {favorites.length === 0 ? (
-                <p>No favorite items yet.</p>
+                <p style={{ color: '#E31616', fontFamily: 'Abhaya Libre SemiBold',fontSize:'2rem', textAlign:'center',marginBottom:'5%', }}>No favorite items yet.</p>
             ) : (
                 <div className="favorites-grid">
                 {favorites.map((item) => (
