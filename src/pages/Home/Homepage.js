@@ -35,10 +35,10 @@ const HomePage = () => {
   };
   const isAuthenticated = token || adminToken;
   useEffect(() => {
-      const protectedRoutes = ['/post-ad']; // ✅ Protect only these routes
-      if (!isAuthenticated && protectedRoutes.includes(window.location.pathname)) {
-        navigate('/login'); // ✅ Redirect only for protected pages
-      }
+    const currentPath = window.location.pathname;
+    if (currentPath === '/post-ad' && !isAuthenticated) {
+      navigate('/login');  // Redirect to login page if not authenticated
+    }
   }, [isAuthenticated, navigate]);
   return (
     <div id="Post">
@@ -81,7 +81,7 @@ const HomePage = () => {
               fontSize: 'x-large',
             }}
             className='postad'
-            onClick={handlePostAdClick}> <Link to='/post-ad' id='lk' style={{color: '#E31616',}}>{currentTranslations.postAd}</Link></button>
+            > <Link to='/post-ad' id='lk' style={{color: '#E31616',}} onClick={handlePostAdClick}>{currentTranslations.postAd}</Link></button>
         </div>
         <div id="searchbar">
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>

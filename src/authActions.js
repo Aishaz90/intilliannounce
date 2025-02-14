@@ -23,7 +23,7 @@ export const loginUser = (credentials) => async (dispatch) => {
       
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
-      if (credentials.email === 'admin@gmail.com' && credentials.password === 'admin123') {
+      if (credentials.email === 'admin@gmail.com' && credentials.password === '123') {
         const adminToken = 'admin-mock-token';
         
         // Store token based on Remember Me choice

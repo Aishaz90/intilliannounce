@@ -69,7 +69,7 @@ const SettingsSidebar = () => {
       <div className={`settings-options ${isSettingsOpen ? 'show' : ''}`}>
         <div className="option-icon" onClick={toggleDarkMode}>
           <img
-            src={isDarkMode ? '/pics/moon.gif' : '/pics/sun.gif'}
+            src={isDarkMode ? `/pics/moon.gif` : `/pics/sun.gif`}
             id="sun"
             alt={isDarkMode ? 'Moon Icon' : 'Sun Icon'}
           />
@@ -78,19 +78,19 @@ const SettingsSidebar = () => {
           className={`option-icon ${language === 'en' ? 'active-lang' : ''}`}
           onClick={() => handleLanguageChange('en')}
         >
-          <img src="pics/en.png" className="lng" alt="English" />
+          <img src={`${process.env.PUBLIC_URL}/pics/en.png`} className="lng" alt="English" />
         </div>
         <div
           className={`option-icon ${language === 'fr' ? 'active-lang' : ''}`}
           onClick={() => handleLanguageChange('fr')}
         >
-          <img src="pics/fr.png" className="lng" alt="French" />
+          <img src={`${process.env.PUBLIC_URL}/pics/fr.png`} className="lng" alt="French" />
         </div>
         <div
           className={`option-icon ${language === 'es' ? 'active-lang' : ''}`}
           onClick={() => handleLanguageChange('es')}
         >
-          <img src="pics/esp.png" className="lng" alt="Spanish" />
+          <img src={`${process.env.PUBLIC_URL}/pics/esp.png`} className="lng" alt="Spanish" />
         </div>
       </div>
     </div>

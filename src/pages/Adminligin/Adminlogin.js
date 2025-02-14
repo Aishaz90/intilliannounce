@@ -17,7 +17,7 @@ export default function Adminlogin() {
 
   useEffect(() => {
     if (adminToken) {
-      navigate('/'); // Redirect to admin dashboard
+      navigate('/admin-dashboard'); // Redirect to admin dashboard
     }
   }, [adminToken, navigate]);
 

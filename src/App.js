@@ -1,58 +1,101 @@
-import './App.css';
-import { Routes, Route, useLocation,Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import HomePage from './pages/Home/Homepage';
-import Listing from './pages/Listing/Listing';
-import Nav from './Nav/Nav'
-import Footer from './Nav/Footer';
-// import Multimedia from './pages/Multimedia/Multimedia';
-import { useEffect } from 'react';
-import Categories from './pages/Categories/Categories';
-import Contact from './pages/Contact/Contact';
-import Login from './pages/Login/Login';
-import Signup from './pages/Signup/Signup';
-import Adminlogin from './pages/Adminligin/Adminlogin';
-import ConstCat from './pages/Multimedia/ConstCat';
-import Details from './pages/Details/Details';
-import Favorites from "./pages/Favorites/Favorites"
-import SettingsSidebar from './pages/SettingsSidebar/SettingsSidebar';
-import Postad from './pages/Postad/Postad';
-import YourAds from './pages/YourAds/YourAds';
-export default  function App() {
+import "./App.css";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import HomePage from "./pages/Home/Homepage";
+import Listing from "./pages/Listing/Listing";
+import Nav from "./Nav/Nav";
+import Footer from "./Nav/Footer";
+import Categories from "./pages/Categories/Categories";
+import Contact from "./pages/Contact/Contact";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+import Adminlogin from "./pages/Adminligin/Adminlogin";
+import ConstCat from "./pages/Multimedia/ConstCat";
+import Details from "./pages/Details/Details";
+import Favorites from "./pages/Favorites/Favorites";
+import SettingsSidebar from "./pages/SettingsSidebar/SettingsSidebar";
+import Postad from "./pages/Postad/Postad";
+import YourAds from "./pages/YourAds/YourAds";
+import Sidebar from "./components/common/Sidebar";
+import OverviewPage from "./pages/OverviewPage";
+import ProductsPage from "./pages/ProductsPage";
+import UsersPage from "./pages/UsersPage";
+import SalesPage from "./pages/SalesPage";
+import OrdersPage from "./pages/OrdersPage";
+import AnalyticsPage from "./pages/AnalyticsPage";
+import SettingsPage from "./pages/SettingsPage";
+
+const tailwindCDN = "https://cdn.tailwindcss.com";
+
+export default function App() {
   const location = useLocation();
   const { token } = useSelector((state) => state.auth);
+
   useEffect(() => {
     console.log("Current Path:", location.pathname);
-    if (location.pathname === "/listing") {
-      document.body.classList.add("listing-body");
-      document.body.classList.remove("home-body");
-    } 
-    else {
-      document.body.classList.add("home-body");
-      document.body.classList.remove("listing-body");
+    
+    if (location.pathname.startsWith("/admin-dashboard")) {
+      document.body.classList.add("admin-body");
+  
+      if (!document.querySelector(`script[src="${tailwindCDN}"]`)) {
+        const script = document.createElement("script");
+        script.src = tailwindCDN;
+        script.async = true;
+        script.onload = () => {
+          // Force a small re-render to apply styles
+          document.body.classList.toggle("force-reload");
+          setTimeout(() => document.body.classList.toggle("force-reload"), 100);
+        };
+        document.head.appendChild(script);
+      }
+    } else {
+      document.body.classList.remove("admin-body");
     }
   }, [location]);
+  
+
   return (
     <div className="App">
-      {/* {location.pathname !== '/' &&location.pathname !== '/listing'&&location.pathname !== '/categories'&&location.pathname !== '/contact'&&location.pathname !== '/login'&&location.pathname !== '/signup'&& <Nav />} */}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/listing" element={<Listing/>} />
-        {/* <Route path="/multimedia" ele%ment={<Multimedia/>} />  */}
-        <Route path="/:category" element={<ConstCat/>} />
-        <Route path="/categories" element={<Categories/>} />
-        <Route path="/contact" element={<Contact/>} /> 
-        <Route path="/login" element={<Login/>} />
-        <Route path="/signup" element={<Signup/>} />  
-        <Route path="/adminlogin" element={<Adminlogin/>} /> 
+        <Route path="/listing" element={<Listing />} />
+        <Route path="/:category" element={<ConstCat />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/adminlogin" element={<Adminlogin />} />
         <Route path="/details/:id" element={<Details />} />
-        <Route path="/favorites" element={token ? <Favorites /> : <Navigate to="/login" />}  />
+        <Route path="/favorites" element={token ? <Favorites /> : <Navigate to="/login" />} />
         <Route path="/post-ad" element={<Postad />} />
         <Route path="/post-ad/:id" element={<Postad />} />
         <Route path="/your-ads" element={<YourAds />} />
+
+        {/* Admin Dashboard */}
+        <Route
+          path="/admin-dashboard/*"
+          element={
+            <div className="flex h-screen bg-gray-900 text-gray-100 overflow-hidden">
+              <div className="fixed inset-0 z-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 opacity-80" />
+                <div className="absolute inset-0 backdrop-blur-sm" />
+              </div>
+              <Sidebar />
+              <Routes>
+                <Route path="/" element={<OverviewPage />} />
+                <Route path="products" element={<ProductsPage />} />
+                <Route path="users" element={<UsersPage />} />
+                <Route path="sales" element={<SalesPage />} />
+                <Route path="orders" element={<OrdersPage />} />
+                <Route path="analytics" element={<AnalyticsPage />} />
+                <Route path="settings" element={<SettingsPage />} />
+              </Routes>
+            </div>
+          }
+        />
       </Routes>
-      <SettingsSidebar/> 
-      {/* {location.pathname !== '/'&&location.pathname !== '/listing'&&location.pathname !== '/categories'&& location.pathname !== '/contact'&&location.pathname !== '/login'&&location.pathname !== '/signup'&&<Footer/>} */}
+      <SettingsSidebar />
     </div>
   );
 }
