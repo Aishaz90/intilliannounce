@@ -25,18 +25,14 @@ import SalesPage from "./pages/SalesPage";
 import OrdersPage from "./pages/OrdersPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import SettingsPage from "./pages/SettingsPage";
-
-const tailwindCDN = "https://cdn.tailwindcss.com";
-
 export default function App() {
   const location = useLocation();
   const { token } = useSelector((state) => state.auth);
   useEffect(() => {
+    const tailwindCDN = "https://cdn.tailwindcss.com";
     const currentPath = location.pathname;
-  
-    // Check if we're on the admin dashboard
     if (currentPath.startsWith("/admin-dashboard")) {
-      document.body.classList.add("admin-body");
+      // document.body.classList.add("admin-body");
         if (!document.querySelector(`script[src="${tailwindCDN}"]`)) {
         const script = document.createElement("script");
         script.src = tailwindCDN;
@@ -52,11 +48,7 @@ export default function App() {
       if (script) {
         script.remove();
       }
-      // If we're not on the admin dashboard, remove the 'admin-body' class
-      document.body.classList.remove("admin-body");
-  
-      // Remove the Tailwind CDN script if on non-admin routes
-      
+      // document.body.classList.remove("admin-body");
     }
     return () => {
       const script = document.querySelector(`script[src="${tailwindCDN}"]`);
@@ -90,9 +82,11 @@ export default function App() {
         <Route
           path="/admin-dashboard/*"
           element={
-            <div className="flex h-screen bg-gray-900 text-gray-100 overflow-hidden">
+            <div className="flex h-screen text-gray-100 overflow-hidden"  style={{
+              background: 'radial-gradient(circle, rgba(2,0,83,0.63) 37%, rgba(204,46,72,0.63) 100%)',
+            }}>
               <div className="fixed inset-0 z-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 opacity-80" />
                 <div className="absolute inset-0 backdrop-blur-sm" />
               </div>
               <Sidebar />
