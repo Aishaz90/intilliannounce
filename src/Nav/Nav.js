@@ -71,6 +71,17 @@ export default function Nav() {
                 </Link>
               </li>
             )}
+            {isAuthenticated && adminToken && (
+              <li className="nav-item">
+                <Link 
+                  className="nav-link" 
+                  style={{ color: "#F8E8DA", width: "max-content", fontSize: "22px" }} 
+                  to="/admin-dashboard"
+                >
+                  Dashboard
+                </Link>
+              </li>
+            )}
             {isAuthenticated ? (
               <>
               <li className="nav-item">

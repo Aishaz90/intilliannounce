@@ -68,7 +68,6 @@ export const loginUser = (credentials) => async (dispatch) => {
   };
   
   export const logoutUser = () => (dispatch) => {
-    // Clear all authentication storage
     localStorage.removeItem('userToken');
     localStorage.removeItem('userData');
     localStorage.removeItem('adminToken');

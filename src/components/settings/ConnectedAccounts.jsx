@@ -28,7 +28,7 @@ const ConnectedAccounts = () => {
 			{connectedAccounts.map((account) => (
 				<div key={account.id} className='flex items-center justify-between py-3'>
 					<div className='flex gap-1'>
-						<img src={account.icon} alt='Social img' className='size-6 object-cover rounded-full mr-2' />
+						<img src={`${process.env.PUBLIC_URL}${account.icon}`} alt='Social img' className='size-6 object-cover rounded-full mr-2' />
 						<span className='text-gray-300'>{account.name}</span>
 					</div>
 					<button

@@ -31,30 +31,44 @@ const tailwindCDN = "https://cdn.tailwindcss.com";
 export default function App() {
   const location = useLocation();
   const { token } = useSelector((state) => state.auth);
-
   useEffect(() => {
-    console.log("Current Path:", location.pathname);
-    
-    if (location.pathname.startsWith("/admin-dashboard")) {
-      document.body.classList.add("admin-body");
+    const currentPath = location.pathname;
   
-      if (!document.querySelector(`script[src="${tailwindCDN}"]`)) {
+    // Check if we're on the admin dashboard
+    if (currentPath.startsWith("/admin-dashboard")) {
+      document.body.classList.add("admin-body");
+        if (!document.querySelector(`script[src="${tailwindCDN}"]`)) {
         const script = document.createElement("script");
         script.src = tailwindCDN;
         script.async = true;
         script.onload = () => {
-          // Force a small re-render to apply styles
           document.body.classList.toggle("force-reload");
           setTimeout(() => document.body.classList.toggle("force-reload"), 100);
         };
         document.head.appendChild(script);
       }
     } else {
+      const script = document.querySelector(`script[src="${tailwindCDN}"]`);
+      if (script) {
+        script.remove();
+      }
+      // If we're not on the admin dashboard, remove the 'admin-body' class
       document.body.classList.remove("admin-body");
-    }
-  }, [location]);
   
-
+      // Remove the Tailwind CDN script if on non-admin routes
+      
+    }
+    return () => {
+      const script = document.querySelector(`script[src="${tailwindCDN}"]`);
+      if (script) {
+        script.remove();
+      }
+      document.body.classList.remove("admin-body");
+  
+      // Check if the script was added and remove it
+      
+    };
+  }, [location]);
   return (
     <div className="App">
       <Routes>
