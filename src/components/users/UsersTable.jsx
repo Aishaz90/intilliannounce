@@ -1,28 +1,146 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, X, Save } from "lucide-react";
-
-const initialUsers = [
-  { id: 1, name: "John Doe", email: "john@example.com", role: "Customer", status: "Active" },
-  { id: 2, name: "Jane Smith", email: "jane@example.com", role: "Admin", status: "Active" },
-  { id: 3, name: "Bob Johnson", email: "bob@example.com", role: "Customer", status: "Inactive" },
-  { id: 4, name: "Alice Brown", email: "alice@example.com", role: "Customer", status: "Active" },
-  { id: 5, name: "Charlie Wilson", email: "charlie@example.com", role: "Moderator", status: "Active" },
-];
+import { ChevronLeft, ChevronRight } from "lucide-react";
+const initialUsers = [{
+  "id": 1,
+  "name": "Mozes Hayzer",
+  "email": "mhayzer0@furl.net",
+  "role": "Admin",
+  "status": "Active"
+}, {
+  "id": 2,
+  "name": "Greg Severy",
+  "email": "gsevery1@wikimedia.org",
+  "role": "Moderator",
+  "status": "Active"
+}, {
+  "id": 3,
+  "name": "Chen Tesh",
+  "email": "ctesh2@zimbio.com",
+  "role": "Customer",
+  "status": "Inactive"
+}, {
+  "id": 4,
+  "name": "Carmine Maffione",
+  "email": "cmaffione3@sciencedirect.com",
+  "role": "Customer",
+  "status": "Inactive"
+}, {
+  "id": 5,
+  "name": "Lisha Cotgrave",
+  "email": "lcotgrave4@pbs.org",
+  "role": "Customer",
+  "status": "Active"
+}, {
+  "id": 6,
+  "name": "Lurlene Lynch",
+  "email": "llynch5@abc.net.au",
+  "role": "Customer",
+  "status": "Active"
+}, {
+  "id": 7,
+  "name": "Saraann Anster",
+  "email": "sanster6@soup.io",
+  "role": "Customer",
+  "status": "Inactive"
+}, {
+  "id": 8,
+  "name": "Margaretta Beeho",
+  "email": "mbeeho7@imgur.com",
+  "role": "Customer",
+  "status": "Active"
+}, {
+  "id": 9,
+  "name": "Dulcy Harvison",
+  "email": "dharvison8@blogs.com",
+  "role": "Customer",
+  "status": "Inactive"
+}, {
+  "id": 10,
+  "name": "Philbert Hempshall",
+  "email": "phempshall9@facebook.com",
+  "role": "Moderator",
+  "status": "Active"
+}, {
+  "id": 11,
+  "name": "Merola Bewshea",
+  "email": "mbewsheaa@moonfruit.com",
+  "role": "Moderator",
+  "status": "Inactive"
+}, {
+  "id": 12,
+  "name": "Malvina Jikylls",
+  "email": "mjikyllsb@dedecms.com",
+  "role": "Customer",
+  "status": "Inactive"
+}, {
+  "id": 13,
+  "name": "Trista MacLaig",
+  "email": "tmaclaigc@gnu.org",
+  "role": "Customer",
+  "status": "Active"
+}, {
+  "id": 14,
+  "name": "Cherrita Metson",
+  "email": "cmetsond@exblog.jp",
+  "role": "Customer",
+  "status": "Active"
+}, {
+  "id": 15,
+  "name": "Devin Garth",
+  "email": "dgarthe@netvibes.com",
+  "role": "Moderator",
+  "status": "Inactive"
+}, {
+  "id": 16,
+  "name": "Pail Peotz",
+  "email": "ppeotzf@facebook.com",
+  "role": "Customer",
+  "status": "Active"
+}, {
+  "id": 17,
+  "name": "Octavia Bruckent",
+  "email": "obruckentg@comsenz.com",
+  "role": "Customer",
+  "status": "Active"
+}, {
+  "id": 18,
+  "name": "Lorens Bentall",
+  "email": "lbentallh@fema.gov",
+  "role": "Moderator",
+  "status": "Active"
+}, {
+  "id": 19,
+  "name": "Dasha Sarson",
+  "email": "dsarsoni@ow.ly",
+  "role": "Customer",
+  "status": "Inactive"
+}, {
+  "id": 20,
+  "name": "Abbi Clinton",
+  "email": "aclintonj@sfgate.com",
+  "role": "Customer",
+  "status": "Inactive"
+}]
 
 const UsersTable = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [users, setUsers] = useState(initialUsers);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
   const handleSearch = (e) => {
     const term = e.target.value.toLowerCase();
     setSearchTerm(term);
+    setCurrentPage(1);
   };
 
   const handleDelete = (userId) => {
     setUsers(prevUsers => prevUsers.filter(user => user.id !== userId));
+    setCurrentPage(1);
   };
 
   const handleEdit = (user) => {
@@ -41,8 +159,16 @@ const UsersTable = () => {
 
   const filteredUsers = users.filter(user =>
     user.name.toLowerCase().includes(searchTerm) || 
-    user.email.toLowerCase().includes(searchTerm)
+    user.email.toLowerCase().includes(searchTerm) || 
+    user.role.toLowerCase().includes(searchTerm) || 
+    user.status.toLowerCase().includes(searchTerm)
   );
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentUsers = filteredUsers.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filteredUsers.length / itemsPerPage);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <motion.div
@@ -80,7 +206,7 @@ const UsersTable = () => {
           </thead>
 
           <tbody className='divide-y divide-gray-700'>
-            {filteredUsers.map((user) => (
+            {currentUsers.map((user) => (
               <motion.tr
                 key={user.id}
                 initial={{ opacity: 0 }}
@@ -218,6 +344,39 @@ const UsersTable = () => {
             </div>
           </motion.div>
         </motion.div>
+      )}
+      {totalPages > 1 && (
+        <div className="flex justify-center mt-6 space-x-2">
+          <button
+            onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+            disabled={currentPage === 1}
+            className="px-4 py-2 text-sm bg-gray-700 rounded-lg disabled:opacity-50 hover:bg-gray-600 transition-colors"
+          >
+            <ChevronLeft size={20} className="text-gray-300" />
+          </button>
+
+          {[...Array(totalPages).keys()].map(number => (
+            <button
+              key={number + 1}
+              onClick={() => paginate(number + 1)}
+              className={`px-4 py-2 text-sm rounded-lg ${
+                currentPage === number + 1 
+                  ? 'bg-blue-500 text-white' 
+                  : 'bg-gray-700 hover:bg-gray-600'
+              }`}
+            >
+              {number + 1}
+            </button>
+          ))}
+
+          <button
+            onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 text-sm bg-gray-700 rounded-lg disabled:opacity-50 hover:bg-gray-600 transition-colors"
+          >
+            <ChevronRight size={20} className="text-gray-300" />
+          </button>
+        </div>
       )}
     </motion.div>
   );
