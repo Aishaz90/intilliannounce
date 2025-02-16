@@ -49,7 +49,7 @@
       "prix":"6000",
       "created_at":"2025-01-28T12:34:16.000000Z",
       "updated_at":"2025-01-28T12:34:16.000000Z",
-      "location":"Tanger"
+      "location":"Rabat"
    },
    {
       "id":5,
@@ -114,7 +114,7 @@
       "prix":"800",
       "created_at":"2025-01-28T12:34:16.000000Z",
       "updated_at":"2025-01-28T12:34:16.000000Z",
-      "location":"Tanger"
+      "location":"Fés"
    },
    {
       "id":10,
@@ -192,7 +192,7 @@
       "prix":"200",
       "created_at":"2025-01-29T14:45:30.000000Z",
       "updated_at":"2025-01-29T14:45:30.000000Z",
-      "location":"Tanger"
+      "location":"Rabat"
    },
    {
       "id":16,
@@ -309,6 +309,6 @@
       "prix":"3000",
       "created_at":"2025-01-29T14:45:30.000000Z",
       "updated_at":"2025-01-29T14:45:30.000000Z",
-      "location":"Tanger"
+      "location":"Fés"
    }
 ]

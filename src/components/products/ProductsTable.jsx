@@ -12,6 +12,7 @@ const INITIAL_PRODUCTS = [
 		stock: 143,
 		sales: 1200,
 		image: "images/dogs.png",
+      	location:"Tanger"
 	  },
 	  {
 		id: 2,
@@ -21,6 +22,7 @@ const INITIAL_PRODUCTS = [
 		stock: 89,
 		sales: 800,
 		image: "images/talon1.jpg",
+		location:"Rabat"
 	  },
 	  {
 		id: 3,
@@ -30,6 +32,7 @@ const INITIAL_PRODUCTS = [
 		stock: 56,
 		sales: 650,
 		image: "images/notbok.jpg",
+		location:"Tanger"
 	  },
 	  {
 		id: 4,
@@ -39,6 +42,7 @@ const INITIAL_PRODUCTS = [
 		stock: 210,
 		sales: 950,
 		image: "images/pcSamsung.jpg",
+		location:"Rabat"
 	  },
 	  {
 		id: 5,
@@ -48,6 +52,7 @@ const INITIAL_PRODUCTS = [
 		stock: 78,
 		sales: 720,
 		image: "images/cupra.jpg",
+		location:"Tanger"
 	  },
 	  {
 		id: 6,
@@ -57,6 +62,7 @@ const INITIAL_PRODUCTS = [
 		stock: 30,
 		sales: 450,
 		image: "images/Rectangle113.png",
+		location:"Tanger"
 	  },
 	  {
 		id: 7,
@@ -66,6 +72,7 @@ const INITIAL_PRODUCTS = [
 		stock: 120,
 		sales: 320,
 		image: "images/sport.jpg",
+		location:"Fés"
 	  },
 	  {
 		id: 8,
@@ -75,6 +82,7 @@ const INITIAL_PRODUCTS = [
 		stock: 5,
 		sales: 12,
 		image: "images/yamaha.png",
+		location:"Rabat"
 	  },
 	  {
 		id: 9,
@@ -84,6 +92,7 @@ const INITIAL_PRODUCTS = [
 		stock: 65,
 		sales: 180,
 		image: "images/jacket.jpg",
+		location:"Fés"
 	  },
 	  {
 		id: 10,
@@ -93,6 +102,7 @@ const INITIAL_PRODUCTS = [
 		stock: 200,
 		sales: 980,
 		image: "images/dogs1.jpg",
+		location:"Tanger"
 	  },
 	  {
 		id: 11,
@@ -102,6 +112,7 @@ const INITIAL_PRODUCTS = [
 		stock: 85,
 		sales: 600,
 		image: "images/children.png",
+		location:"Fés"
 	  },
 	  {
 		id: 12,
@@ -111,6 +122,7 @@ const INITIAL_PRODUCTS = [
 		stock: 40,
 		sales: 250,
 		image: "images/plants1.jpg",
+		location:"Tanger"
 	  },
 	  {
 		id: 13,
@@ -120,6 +132,7 @@ const INITIAL_PRODUCTS = [
 		stock: 90,
 		sales: 420,
 		image: "images/clavie.jpg",
+		location:"Fés"
 	  },
 	  {
 		id: 14,
@@ -129,6 +142,7 @@ const INITIAL_PRODUCTS = [
 		stock: 150,
 		sales: 700,
 		image: "images/blue.jpg",
+		location:"Tanger"
 	  },
 	  {
 		id: 15,
@@ -138,6 +152,7 @@ const INITIAL_PRODUCTS = [
 		stock: 75,
 		sales: 300,
 		image: "images/dvd.png",
+		location:"Rabat"
 	  },
 	  {
 		id: 16,
@@ -147,6 +162,7 @@ const INITIAL_PRODUCTS = [
 		stock: 180,
 		sales: 850,
 		image: "images/powerbank.jpg",
+		location:"Rabat"
 	  },
 	  {
 		id: 17,
@@ -156,6 +172,7 @@ const INITIAL_PRODUCTS = [
 		stock: 25,
 		sales: 150,
 		image: "images/drone.jpg",
+		location:"Tanger"
 	  },
 	  {
 		id: 18,
@@ -165,6 +182,7 @@ const INITIAL_PRODUCTS = [
 		stock: 50,
 		sales: 90,
 		image: "images/iphone15.png",
+		location:"Fés"
 	  },
 	  {
 		id: 19,
@@ -174,6 +192,7 @@ const INITIAL_PRODUCTS = [
 		stock: 95,
 		sales: 400,
 		image: "images/JBL.png",
+		location:"Tanger"
 	  },
 	  {
 		id: 20,
@@ -183,6 +202,7 @@ const INITIAL_PRODUCTS = [
 		stock: 110,
 		sales: 500,
 		image: "images/adaptatteur.png",
+		location:"Tanger"
 	  },
 	  {
 		id: 21,
@@ -192,6 +212,7 @@ const INITIAL_PRODUCTS = [
 		stock: 35,
 		sales: 120,
 		image: "images/canon2.jpg",
+		location:"Tanger"
 	  },
 	  {
 		id: 22,
@@ -201,6 +222,7 @@ const INITIAL_PRODUCTS = [
 		stock: 300,
 		sales: 1500,
 		image: "images/charge.png",
+		location:"Rabat"
 	  },
 	  {
 		id: 23,
@@ -210,6 +232,7 @@ const INITIAL_PRODUCTS = [
 		stock: 220,
 		sales: 950,
 		image: "images/souris.png",
+		location:"Tanger"
 	  },
 	  {
 		id: 24,
@@ -219,6 +242,7 @@ const INITIAL_PRODUCTS = [
 		stock: 40,
 		sales: 200,
 		image: "images/PcAcer.jpg",
+		location:"Fés"
 	  },
 ];
 
@@ -244,7 +268,8 @@ const ProductsTable = () => {
   const filteredProducts = products.filter(
     (product) => 
       product.name.toLowerCase().includes(searchTerm) || 
-      product.category.toLowerCase().includes(searchTerm)
+      product.category.toLowerCase().includes(searchTerm) || 
+      product.location.toLowerCase().includes(searchTerm)
   );
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -261,40 +286,44 @@ const ProductsTable = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
     >
-      <div className='flex justify-between items-center mb-6'>
+      <div className='flex justify-between items-center w-100 mb-6'>
         <h2 className='text-xl font-semibold text-gray-100'>Product List</h2>
-        <div className='relative'>
+        <div className='relative' style={{width:'32%',}}>
           <input
             type='text'
-            placeholder='Search products...'
+            placeholder='Search products by name | categorie | city...'
             className='bg-gray-700 text-white placeholder-gray-400 rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
             onChange={handleSearch}
             value={searchTerm}
+			style={{width:"100%",}}
           />
           <Search className='absolute left-3 top-2.5 text-gray-400' size={18} />
         </div>
       </div>
 
       <div className='overflow-x-auto'>
-        <table className='min-w-full divide-y divide-gray-700'>
+        <table className='min-w-full divide-y divide-gray-700 text-center'>
           <thead>
             <tr>
               <th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
                 Name
               </th>
-              <th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
+			  <th className='px-6 py-3 text-left text-xs text-center font-medium text-gray-400 uppercase tracking-wider'>
+                City
+              </th>
+              <th className='px-6 py-3 text-left text-xs text-center font-medium text-gray-400 uppercase tracking-wider'>
                 Category
               </th>
-              <th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
+              <th className='px-6 py-3 text-left text-xs text-center font-medium text-gray-400 uppercase tracking-wider'>
                 Price
               </th>
-              <th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
+              <th className='px-6 py-3 text-left text-xs text-center font-medium text-gray-400 uppercase tracking-wider'>
                 Stock
               </th>
-              <th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
+              <th className='px-6 py-3 text-left text-xs text-center font-medium text-gray-400 uppercase tracking-wider'>
                 Sales
               </th>
-              <th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
+              <th className='px-6 py-3 text-left text-xs text-center font-medium text-gray-400 uppercase tracking-wider'>
                 Actions
               </th>
             </tr>
@@ -316,11 +345,12 @@ const ProductsTable = () => {
                   />
                   {product.name}
                 </td>
+				<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>{product.location}</td>
                 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
                   {product.category}
                 </td>
                 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-                  ${product.price.toFixed(2)}
+                  {product.price} DH
                 </td>
                 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>{product.stock}</td>
                 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>{product.sales}</td>
