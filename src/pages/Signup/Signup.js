@@ -168,35 +168,13 @@ export default function Signup() {
                 cursor: loading ? 'not-allowed' : 'pointer',
                 fontFamily: 'Abhaya Libre SemiBold',
                 fontSize: '16px',
-                marginTop: '15px'
+                marginLeft: '90px'
               }}
             >
               {loading ? 'Creating Account...' : 'Sign Up'}
             </button>
           </div>
-
-          <img src="images/or.png" alt="or separator" id="orr" />
-          
           <div id='ss'>
-            <button type="button" id='alinks' style={{
-              backgroundColor: 'transparent',
-              border: '1px solid #4A429A',
-              borderRadius: '8px',
-              padding: '10px',
-              width: '80%',
-              margin: '10px 50px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-              <img
-                src="images/GoogleChromeLogo.png"
-                alt="Google logo"
-                style={{ width: '20px', marginRight: '10px' }}
-              />
-              Continue with Google
-            </button>
-            
             <p style={{ 
               textAlign: 'center', 
               fontFamily: 'Abhaya Libre SemiBold',

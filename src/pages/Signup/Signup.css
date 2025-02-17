@@ -35,7 +35,7 @@ label {
     gap: 5px;
     font-size: 14px;
     color: #fa5252;
-    margin-left: 5%;
+    margin-left: 50px;
     display: flex;
 }
 
@@ -45,6 +45,7 @@ label {
 
 .terms input {
     accent-color: #fa5252;
+    margin-left: 2%;
 }
 
 /* Signup Button */
@@ -112,17 +113,10 @@ label {
         width: 40%;
     }
     .input{
-        margin-top: -7%;
-    }
-    #orr{
-        margin-top: 0%;
-        margin-bottom: 2%;
-    }
-    #ss{
         margin-top: -5%;
     }
     #formulaire{
-        height: 540px;
+        height: 530px;
         margin-top: -2%;
     }
 }

@@ -42,6 +42,14 @@ export default function Adminlogin() {
         </Link>
         <form id="formulaires" onSubmit={handleSubmit}>
           <h2 id='hh2'>Admin Section</h2>
+          <div style={{ 
+              color: 'green', 
+              fontSize:'1.03rem',
+              textAlign: 'center', 
+              margin: '-5px 20px',
+              fontFamily: 'Abhaya Libre SemiBold'
+            }}> Try "Email : admin@gmail.com | Password : admin123"
+            </div>
           <div id="inputs">
             <label
               htmlFor="email"
