@@ -113,14 +113,14 @@ export default function Contact() {
           </div>
           <div>
             <p style={{ color: '#01005391', padding: '5%' }}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, <br/>odio libero non possimus eveniet ipsa neque beatae, eos, magnam <br/>officiis rem asperiores consequatur vero cumque voluptatibus architecto debitis? <br/> Adipisci, ipsum.</p>
-            <div style={{ background: 'url(pics/p/Vector-3.png) no-repeat 15px', width: '100%', height: '100px' }}>
-              <h5 style={{ color: '#020053', marginLeft: '15%', fontFamily: 'Abhaya Libre SemiBold', paddingTop: '5%' }}>2118 Thornridge Cir. Syracuse,<br /> Connecticut 35624</h5>
+            <div style={{ background: 'url(pics/p/Vector-3.png) no-repeat 15px', backgroundSize: '32px',width: '100%', height: '100px' }}>
+              <h5 style={{ color: '#020053', marginLeft: '12%', fontFamily: 'Abhaya Libre SemiBold', paddingTop: '5%' }}>2118 Thornridge Cir. Syracuse,<br /> Connecticut 35624</h5>
             </div>
-            <div style={{ background: 'url(pics/p/Vector-4.png) no-repeat 15px', width: '100%', height: '100px' }}>
-              <h5 style={{ color: '#020053', marginLeft: '15%', fontFamily: 'Abhaya Libre SemiBold', paddingTop: '5%' }}>+091 345 6789<br />+034 567 8910</h5>
+            <div style={{ background: 'url(pics/p/Vector-4.png) no-repeat 15px', backgroundSize: '32px',width: '100%', height: '100px' }}>
+              <h5 style={{ color: '#020053', marginLeft: '12%', fontFamily: 'Abhaya Libre SemiBold', paddingTop: '5%' }}>+091 345 6789<br />+034 567 8910</h5>
             </div>
-            <div style={{ background: 'url(pics/p/Vector-5.png) no-repeat 15px', width: '100%', height: '100px' }}>
-              <h5 style={{ color: '#020053', marginLeft: '15%', fontFamily: 'Abhaya Libre SemiBold', paddingTop: '5%' }}>Info@intilliannounce.com<br />azjhn.announce@intillianounce.com</h5>
+            <div style={{ background: 'url(pics/p/Vector-5.png) no-repeat 15px',backgroundSize: '32px', width: '100%', height: '100px' }}>
+              <h5 style={{ color: '#020053', marginLeft: '12%', fontFamily: 'Abhaya Libre SemiBold', paddingTop: '5%' }}>Info@intilliannounce.com<br />azjhn.announce@intillianounce.com</h5>
             </div>
           </div>
         </div>
